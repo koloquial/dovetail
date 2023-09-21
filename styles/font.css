@@ -1,0 +1,20 @@
+.title{
+    font-family: 'Lavishly Yours', cursive;
+    font-size: 100px;
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    text-shadow: -1px 0 black, 0 3px black, 3px 0 black, 0 -1px black;
+}
+
+.title-box{
+    display: inline-block; 
+    margin-top: 10%;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    cursor: default;
+}
