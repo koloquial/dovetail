@@ -1,6 +1,9 @@
 @import url("palette.css");
 @import url("font.css");
 @import url("button.css");
+@import url("input.css");
+@import url("modal.css");
+@import url("snackbar.css");
 
 body{
     padding: 0px;
@@ -31,4 +34,31 @@ body{
     margin: 5px; 
     cursor: pointer; 
     font-size: small;
+}
+
+.page-container{
+    display: inline-block;
+    margin-top: 10%;
+    width: 80%;
+}
+
+.white-block{
+    display: inline-block;
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: left;
+}
+
+.game-window{
+    display: inline-block;
+    width: 700px;
+    height: 700px;
+    background-color: white;
+    margin-top: 7%;
+    border: 1px solid black;
 }

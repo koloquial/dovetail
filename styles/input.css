@@ -1,0 +1,11 @@
+input{
+    border-bottom: 1px solid black;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    background-color: aliceblue;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    cursor: default;
+}
