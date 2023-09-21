@@ -4,6 +4,7 @@
 @import url("input.css");
 @import url("modal.css");
 @import url("snackbar.css");
+@import url("switch.css");
 
 body{
     padding: 0px;
@@ -61,4 +62,8 @@ body{
     background-color: white;
     margin-top: 7%;
     border: 1px solid black;
+}
+
+.slidecontainer {
+    width: 50%; 
 }

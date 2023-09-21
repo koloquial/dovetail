@@ -22,10 +22,10 @@ function newGame(){
     return `
         <div>
             <h2>New Game</h2>
+            <hr />
             <p>
                 Create your character
             </p>
-            <hr />
             <p>Name</p>
             <input type="text" id="name" placeholder="Name" maxlength="15" />
 

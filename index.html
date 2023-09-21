@@ -20,6 +20,7 @@
         <script type="text/javascript" src="./functions/loadGame.js"></script>
         <script type="text/javascript" src="./functions/setModalContent.js"></script>
         <script type="text/javascript" src="./functions/setSnackbar.js"></script>
+        <script type="text/javascript" src="./functions/playSound.js"></script>
 
         <!-- classes -->
         <script type="text/javascript" src="./classes/Hero.js"></script>
@@ -28,10 +29,19 @@
         <script type="text/javascript" src="./screens/splash.js"></script>
         <script type="text/javascript" src="./screens/newGame.js"></script>
         <script type="text/javascript" src="./screens/deleteGame.js"></script>
+        <script type="text/javascript" src="./screens/settings.js"></script>
         <script type="text/javascript" src="./screens/game.js"></script>
 
         <!-- maps-->
         <script type="text/javascript" src="./maps/_garden.js"></script>
+
+        <!-- audio -->
+        <audio id="system-button">
+            <source src="./sounds/system-button.mp3" type="audio/mp3">
+        </audio>
+        <audio id="system-slider">
+            <source src="./sounds/system-slider.mp3" type="audio/mp3">
+        </audio>
     </head>
     <body>
         <div id="container" class="container">
@@ -51,7 +61,7 @@
                     <p>Wiki</p>
                 </center>
             </div>
-            <div class="footer-box">
+            <div class="footer-box" onclick="playSound('system-button'); setModalContent(settings);">
                 <center>
                     <span class="material-symbols-outlined">
                         settings

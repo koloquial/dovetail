@@ -27,10 +27,11 @@ function deleteGame(){
     return `
         <div>
             <h2>Delete Game</h2>
+            <hr />
             <p>
                 Are you sure you would like to delete this saved file from your browser cache?
             </p>
-            <hr />
+
             <p>${valid ? 'Name: ' + HERO.name : `Could not find a saved character.`}</p>
 
             <br /><br />

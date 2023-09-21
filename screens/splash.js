@@ -5,8 +5,7 @@ window.onclick = function(event) {
   }
 
 function handleNewGame(){
-    let modal = document.getElementById("modal");
-    modal.style.display = "block";
+    playSound('system-button');
     setModalContent(newGame);
 }
 
