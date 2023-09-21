@@ -9,6 +9,8 @@ function handleSubmit(){
         setSnackbar(`<p>${newHero.name} has been created.</p>`);
 
         changeScreen(game);
+    }else{
+        setSnackbar(`<p>Please enter a valid name.</p>`);
     }
 }
 
