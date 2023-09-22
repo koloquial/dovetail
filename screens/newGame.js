@@ -1,6 +1,63 @@
+//default values
+let defaultSkin = 'aliceblue';
+let defaultEyes = 'aliceblue';
+let defaultShirt = 'aliceblue';
+let defaultPants = 'aliceblue';
+let defaultShoes = 'aliceblue';
+
+function changeShirtColor(){
+    let value = document.getElementById("shirt-color").value;
+
+    document.getElementById("shirt-color").style.backgroundColor = value;
+
+    const shirtValues = ['left-shoulder', 'right-shoulder', 'torso'];
+
+    shirtValues.forEach(item => {
+        document.getElementById(item).style.backgroundColor = value;
+    });
+}
+
+function changeSkinTone(){
+    let value = document.getElementById("skin-tone").value;
+
+    document.getElementById("skin-tone").style.backgroundColor = value;
+
+    const skinValues = ['head', 'neck', 'left-arm', 'right-arm', 'left-hand', 'right-hand' ];
+
+    skinValues.forEach(item => {
+        document.getElementById(item).style.backgroundColor = value;
+    });
+}
+
+function changeEyeColor(){
+    let value = document.getElementById("eye-color").value;
+
+    document.getElementById("eye-color").style.backgroundColor = value;
+
+    const eyeColorValues = ['left-iris', 'right-iris'];
+
+    eyeColorValues.forEach(item => {
+        document.getElementById(item).style.backgroundColor = value;
+    });
+}
+
 function handleSubmit(){
     if(document.getElementById("name").value && document.getElementById("name").value !== ""){
-        let newHero = new Hero(document.getElementById("name").value);
+        
+        let appearance = {
+            hair: '',
+            hairstyle: '',
+            skin: document.getElementById("skin-tone").value,
+            eye: document.getElementById("eye-color").value,
+            shirt: document.getElementById("shirt-color").value,
+            pants: document.getElementById("pants-color").value,
+            shoes: document.getElementById("shoe-color").value,
+        }
+
+        let newHero = new Hero(
+            document.getElementById("name").value, 
+            appearance
+        );
 
         newHero.save();
 
@@ -9,6 +66,8 @@ function handleSubmit(){
         setSnackbar(`<p>${newHero.name} has been created.</p>`);
 
         changeScreen(game);
+
+        stopSound('music');
     }else{
         setSnackbar(`<p>Please enter a valid name.</p>`);
     }
@@ -40,15 +99,15 @@ function newGame(){
                 <div id="head" class="head-down">
                     <div id="hair" class="hair-down-b"></div>
                     <div id="face">
-                        <div id="left-eye">
-                            <div id="left-eye-iris"></div>
-                            <div id="left-eye-pupil"></div>
-                            <div id="left-eye-speck"></div>
+                        <div id="left-eye" class='left-eye-down'>
+                            <div id="left-iris" class="left-iris-down"></div>
+                            <div id="left-pupil" class="left-pupil-down"></div>
+                            <div id="left-speck" class='left-speck-down'></div>
                         </div>
-                        <div id="right-eye">
-                            <div id="right-eye-iris"></div>
-                            <div id="right-eye-pupil"></div>
-                            <div id="right-eye-speck"></div>
+                        <div id="right-eye" class="right-eye-down">
+                            <div id="right-iris" class="right-iris-down"></div>
+                            <div id="right-pupil" class="right-pupil-down"></div>
+                            <div id="right-speck" class='right-speck-down'></div>
                         </div>
                     </div>
                 </div>
@@ -73,6 +132,17 @@ function newGame(){
                 </div>
             </div>
             </center>
+            <br />
+
+            <center>
+            <div style="display: inline-block; vertical-align: top;">
+            <form>
+                <fieldset>
+                    <legend>Name</legend>
+                    <input type="text" id="name" placeholder="Name" />
+                </fieldset>
+            </form>
+            </div>
 
             <div style="display: inline-block;">
                 <form>
@@ -84,7 +154,7 @@ function newGame(){
                                 <fieldset>
                                     <legend>Hair</legend>
                                         <select name="hair">
-                                            <option value="volvo">Volvo</option>
+                                            <option value="none">None</option>
                                         </select>
                                 </fieldset>
                             </form>
@@ -93,9 +163,9 @@ function newGame(){
                         <div style="display: block;">
                             <form>
                                 <fieldset>
-                                    <legend>Skin</legend>
-                                        <select name="skin">
-                                            <option value="volvo">Volvo</option>
+                                    <legend>Hair Color</legend>
+                                        <select name="hair-color">
+                                            <option value="none">None</option>
                                         </select>
                                 </fieldset>
                             </form>
@@ -104,18 +174,90 @@ function newGame(){
                         <div style="display: block;">
                             <form>
                                 <fieldset>
-                                    <legend>Eyes</legend>
-                                        <select name="eyes">
-                                            <option value="volvo">Volvo</option>
-                                        </select>
+                                    <legend>Skin Tone</legend>
+                                    <select id="skin-tone" style=${'background-color:' + defaultSkin} onchange="changeSkinTone()">
+                                        <option style="background-color: #ffe7d1" value="#ffe7d1"></option>
+                                        <option style="background-color: #e6bc98" value="#e6bc98"></option>
+                                        <option style="background-color: #d4aa78" value="#d4aa78"></option>
+                                        <option style="background-color: #a16e4b" value="#a16e4b"></option>
+                                        <option style="background-color: #3b2219" value="#3b2219"></option>
+                                    </select>
                                 </fieldset>
                             </form>
                         </div>
+
+                        <div style="display: block;">
+                        <form>
+                            <fieldset>
+                                <legend>Eye Color</legend>
+                                <select id="eye-color" style=${'background-color:' + defaultEyes} onchange="changeEyeColor()">
+                                    <option style="background-color: #634e34" value="#634e34"></option>
+                                    <option style="background-color: #2e536f" value="#2e536f"></option>
+                                    <option style="background-color: #3d671d" value="#3d671d"></option>
+                                    <option style="background-color: #1c7847" value="#1c7847"></option>
+                                    <option style="background-color: #497665" value="#497665"></option>
+                                </select>
+                            </fieldset>
+                        </form>
+                    </div>
                     </fieldset>
                 </form>
             </div>
+
+            <div style="display: inline-block; vertical-align: top;">
+                <form>
+                    <fieldset>
+                        <legend>Clothing</legend>
+
+                        <div style="display: block;">
+                        <form>
+                            <fieldset>
+                                <legend>Shirt Color</legend>
+                                <select id="shirt-color" style=${'background-color:' + defaultShirt} onchange="changeShirtColor()">
+                                    <option style="background-color: #ffe7d1" value="#ffe7d1"></option>
+                                    <option style="background-color: #e6bc98" value="#e6bc98"></option>
+                                    <option style="background-color: #d4aa78" value="#d4aa78"></option>
+                                    <option style="background-color: #a16e4b" value="#a16e4b"></option>
+                                    <option style="background-color: #3b2219" value="#3b2219"></option>
+                                </select>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                        <div style="display: block;">
+                            <form>
+                                <fieldset>
+                                    <legend>Pants Color</legend>
+                                    <select id="pants-color" style=${'background-color:' + defaultPants} onchange="changePantsColor()">
+                                        <option style="background-color: #ffe7d1" value="#ffe7d1"></option>
+                                        <option style="background-color: #e6bc98" value="#e6bc98"></option>
+                                        <option style="background-color: #d4aa78" value="#d4aa78"></option>
+                                        <option style="background-color: #a16e4b" value="#a16e4b"></option>
+                                        <option style="background-color: #3b2219" value="#3b2219"></option>
+                                    </select>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <div style="display: block;">
+                        <form>
+                            <fieldset>
+                                <legend>Shoe Color</legend>
+                                <select id="shoe-color" style=${'background-color:' + defaultShoes} onchange="changeShoesColor()">
+                                    <option style="background-color: #634e34" value="#634e34"></option>
+                                    <option style="background-color: #2e536f" value="#2e536f"></option>
+                                    <option style="background-color: #3d671d" value="#3d671d"></option>
+                                    <option style="background-color: #1c7847" value="#1c7847"></option>
+                                    <option style="background-color: #497665" value="#497665"></option>
+                                </select>
+                            </fieldset>
+                        </form>
+                    </div>
+                    </fieldset>
+                </form>
+            </div>
+            </center>
            
-            
             <br /><br />
             <center>
                 <button onclick="handleSubmit()">Start Game</button>

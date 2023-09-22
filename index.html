@@ -13,10 +13,11 @@
                     document.querySelector("#footer").style.display = "none";
                     document.querySelector("#loading-container").style.display = "block";
                 } else {
-                    document.querySelector("#loading-container").style.display = "none";
-                    document.querySelector("#container").style.display = "block"; 
-                    document.querySelector("#footer").style.display = "block"; 
-                    loading = false;
+                        document.querySelector("#loading-container").style.display = "none";
+                        document.querySelector("#container").style.display = "block"; 
+                        document.querySelector("#footer").style.display = "block"; 
+                        loading = false;
+                        playSound('music-title');
                 }
             };
 
@@ -27,6 +28,7 @@
 
             function setLoadTip(){
                 const tips = [
+                    "If your inputs aren't being recognized, be sure to click the mouse inside of the browswer window to make sure it is active.",
                     "Once I have tips to write here this is where they will go.",
                     "Perhaps locations of easter eggs will be located here.",
                     "Perhaps messages will cycle based on rarity rather than completely random."
@@ -36,7 +38,7 @@
                 document.getElementById("loading-tip").innerHTML = tips[randomTip];
             }
 
-            let triggerBackground = setInterval(() => {
+            const triggerBackground = setInterval(() => {
                 if(loading){
                     setLoadBackground();
                 }else{
@@ -44,8 +46,7 @@
                 }
             }, 5000);
 
-            let triggerTip = setInterval(() => {
-                console.log('called')
+            const triggerTip = setInterval(() => {
                 if(loading){
                     setLoadTip();
                 }else{
@@ -75,6 +76,7 @@
         <script type="text/javascript" src="./functions/setModalContent.js"></script>
         <script type="text/javascript" src="./functions/setSnackbar.js"></script>
         <script type="text/javascript" src="./functions/playSound.js"></script>
+        <script type="text/javascript" src="./functions/stopSound.js"></script>
 
         <!-- classes -->
         <script type="text/javascript" src="./classes/Hero.js"></script>
@@ -90,12 +92,43 @@
         <script type="text/javascript" src="./maps/_garden.js"></script>
 
         <!-- audio -->
-        <audio id="system-button">
-            <source src="./sounds/system-button.mp3" type="audio/mp3">
+        <audio id="system-click">
+            <source src="./sounds/system-click.mp3" type="audio/mp3">
+        </audio>
+        <audio id="system-back">
+            <source src="./sounds/system-back.mp3" type="audio/mp3">
         </audio>
         <audio id="system-slider">
             <source src="./sounds/system-slider.mp3" type="audio/mp3">
         </audio>
+        <audio id="music-title">
+            <source src="./sounds/music-title.mp3" type="audio/mp3">
+        </audio>
+        <audio id="background-1">
+            <source src="./sounds/background-1.mp3" type="audio/mp3">
+        </audio>
+        <audio id="music-acoustic1">
+            <source src="./sounds/music-acoustic1.mp3" type="audio/mp3">
+        </audio>
+        <audio id="music-chill1">
+            <source src="./sounds/music-chill1.mp3" type="audio/mp3">
+        </audio>
+        <audio id="music-chill2">
+            <source src="./sounds/music-chill2.mp3" type="audio/mp3">
+        </audio>
+        <audio id="music-chill3">
+            <source src="./sounds/music-chill3.mp3" type="audio/mp3">
+        </audio>
+        <audio id="music-chill4">
+            <source src="./sounds/music-chill4.mp3" type="audio/mp3">
+        </audio>
+        <audio id="music-chill5">
+            <source src="./sounds/music-chill5.mp3" type="audio/mp3">
+        </audio>
+        <audio id="music-chill6">
+            <source src="./sounds/music-chill6.mp3" type="audio/mp3">
+        </audio>
+
     </head>
     <body>
         <div id="loading-container" class="loading-container fade-in">
@@ -135,7 +168,7 @@
                     <p>Wiki</p>
                 </center>
             </div>
-            <div class="footer-box" onclick="playSound('system-button'); setModalContent(settings);">
+            <div class="footer-box" onclick="playSound('system-click'); setModalContent(settings);">
                 <center>
                     <span class="material-symbols-outlined">
                         settings

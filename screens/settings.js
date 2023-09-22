@@ -1,10 +1,19 @@
 function handleClose(){
+    playSound('system-back');
     document.getElementById("modal").style.display = "none";
 }
 
 function handleSounds(id){
     playSound('system-slider');
     switch(id){
+        case "mute":
+            if(MUTE){
+                MUTE = false;
+                stopSound('music');
+            }else{
+                MUTE = true;
+            }
+        break;
         case "system":
                 if(SYSTEM){
                     SYSTEM = false;
@@ -12,13 +21,20 @@ function handleSounds(id){
                     SYSTEM = true;
                 }
             break;
+        case "music":
+            if(MUSIC){
+                MUSIC = false;
+                stopSound('music');
+            }else{
+                MUSIC = true;
+            }
+        break;
         default:
             break;
     }
 }
 
 function settings(){
-
     return `
         <div>
             <table style="width: 100%">
@@ -67,6 +83,9 @@ function settings(){
                                 </label>
                             </fieldset>
                         </div>
+                        <script>
+                            console.log('test')
+                        </script>
 
                         <div style="display: block">
                             <fieldset>
@@ -110,6 +129,18 @@ function settings(){
                             </fieldset> 
                         </div>
 
+                    </fieldset>
+                </form>
+            </div>
+
+            <div style="display: inline-block; vertical-align: top;">
+                <form>
+                    <fieldset>
+                        <legend>Controls</legend>
+
+                        <p>
+                            Use the arrow keys to move.
+                        </p>
                     </fieldset>
                 </form>
             </div>

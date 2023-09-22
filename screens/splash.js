@@ -5,11 +5,12 @@ window.onclick = function(event) {
   }
 
 function handleNewGame(){
-    playSound('system-button');
+    playSound('system-click');
     setModalContent(newGame);
 }
 
 function handleDeleteGame(){
+    playSound('system-click');
     try{
         if(localStorage.getItem("dovetail")){
             let modal = document.getElementById("modal");

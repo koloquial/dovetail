@@ -1,10 +1,10 @@
 class Hero{
-    constructor(name, location = _garden){
+    constructor(name, appearance, location = _garden){
         this.name = name;
         this.location = location;
+        this.appearance = appearance;
     }
 
-    //save hero data into localstorage
     save(){
         try{
             localStorage.setItem("dovetail", JSON.stringify(this));
@@ -14,7 +14,6 @@ class Hero{
         
     }
 
-    //remove cached data
     delete(){
         localStorage.removeItem("dovetail");
     }
