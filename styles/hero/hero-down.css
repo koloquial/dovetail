@@ -1,0 +1,117 @@
+.hero-preview{
+    width: 100px;
+    height: 200px;
+    border: 2px dotted black;
+    border-radius: 5px;
+}
+
+.hero-down-container{
+    display: block;
+}
+
+.hair-down-a{
+
+}
+
+.hair-down-b{
+
+}
+
+.head-down{
+    position: relative;
+    top: 25px;
+    left: 0px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #cccccc;
+}
+
+.left-eye-down{
+
+}
+
+.neck-down{
+    position: relative;
+    top: 15px;
+    left: 0px;
+    width: 10px;
+    height: 18px;
+    background-color: #cccccc;
+}
+
+.torso-down{
+    position: relative;
+    top: 10px;
+    left: 0px;
+    width: 20px;
+    height: 25px;
+    background-color: #cccccc;
+}
+
+.left-arm-down{
+    position: relative;
+    top: 5px;
+    left: -12px;
+    width: 5px;
+    height: 20px;
+    z-index: 100;
+    border-radius: 0% 0% 0% 0%;
+    background-color: #cccccc;
+}
+
+
+.right-arm-down{
+    position: relative;
+    top: -15px;
+    left: 12px;
+    width: 5px;
+    height: 20px;
+    z-index: 100;
+    border-radius: 0% 0% 0% 0%;
+    background-color: #cccccc;
+}
+
+.left-shoulder-down{
+    position: relative;
+    top: -5px;
+    left: 0px;
+    width: 5px;
+    height: 5px;
+    z-index: 100;
+    border-radius: 50% 0% 0% 0%;
+    background-color: #cccccc;
+}
+
+.right-shoulder-down{
+    position: relative;
+    top: -5px;
+    left: 0px;
+    width: 5px;
+    height: 5px;
+    z-index: 100;
+    border-radius: 0% 50% 0% 0%;
+    background-color: #cccccc;
+}
+
+.left-hand-down{
+    position: relative;
+    top: 15px;
+    left: 0px;
+    width: 5px;
+    height: 5px;
+    z-index: 100;
+    border-radius: 0% 0% 50% 50%;
+    background-color: #aaaaaa;
+}
+
+.right-hand-down{
+    position: relative;
+    top: 15px;
+    left: 0px;
+    width: 5px;
+    height: 5px;
+    z-index: 100;
+    border-radius: 0% 0% 50% 50%;
+    background-color: #aaaaaa;
+}

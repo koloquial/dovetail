@@ -1,10 +1,12 @@
 @import url("palette.css");
-@import url("font.css");
-@import url("button.css");
-@import url("input.css");
-@import url("modal.css");
-@import url("snackbar.css");
-@import url("switch.css");
+@import url("./system/font.css");
+@import url("./system/button.css");
+@import url("./system/input.css");
+@import url("./system/modal.css");
+@import url("./system/snackbar.css");
+@import url("./system/switch.css");
+@import url("loading.css");
+@import url("./hero/hero-down.css");
 
 body{
     padding: 0px;
@@ -64,6 +66,11 @@ body{
     border: 1px solid black;
 }
 
-.slidecontainer {
-    width: 50%; 
+fieldset{
+    border: 1px solid rgb(154, 154, 154);
+    border-radius: 5px;
+}
+
+legend{
+    font-size: medium;
 }

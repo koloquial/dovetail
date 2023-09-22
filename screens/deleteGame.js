@@ -26,17 +26,28 @@ function deleteGame(){
 
     return `
         <div>
-            <h2>Delete Game</h2>
+            <table style="width: 100%">
+                <tbody>
+                    <tr>
+                        <td><h2>Delete Game</h2></td>
+                        <td>
+                            <div style="float: right">
+                                <button onclick="handleClose()">Close</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <hr />
             <p>
-                Are you sure you would like to delete this saved file from your browser cache?
+                Are you sure you would like to delete this saved file from your browser cache?  This process cannot be undone.
             </p>
 
             <p>${valid ? 'Name: ' + HERO.name : `Could not find a saved character.`}</p>
 
             <br /><br />
             <center>
-                <button onclick="handleSubmitDelete()">Delete Game</button>
+                <button class="danger" onclick="handleSubmitDelete()">Delete Game</button>
                 <button onclick="handleCancel()">Cancel</button>
             </center>
         </div>

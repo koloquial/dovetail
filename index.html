@@ -3,6 +3,62 @@
     <head>
         <title>Dovetail</title>
 
+        <!-- loading -->
+        <script>
+            let loading = true; 
+            
+            document.onreadystatechange = function() {
+                if (document.readyState !== "complete") {
+                    document.querySelector("#container").style.display = "none";
+                    document.querySelector("#footer").style.display = "none";
+                    document.querySelector("#loading-container").style.display = "block";
+                } else {
+                    setTimeout(() => {
+                        document.querySelector("#loading-container").style.display = "none";
+                        document.querySelector("#container").style.display = "block"; 
+                        document.querySelector("#footer").style.display = "block"; 
+                        loading = false;
+                    }, 25000)
+                }
+            };
+
+            function setLoadBackground(){
+                let randomImage = Math.ceil(Math.random() * 10);
+                document.getElementById("loading-container").style.backgroundImage = "url('./images/loading/" + randomImage + ".png')";
+            }
+
+            function setLoadTip(){
+                const tips = [
+                    "Once I have tips to write here this is where they will go.",
+                    "Perhaps locations of easter eggs will be located here.",
+                    "Perhaps messages will cycle based on rarity rather than completely random."
+                ]
+
+                let randomTip = Math.floor(Math.random() * tips.length);
+                document.getElementById("loading-tip").innerHTML = tips[randomTip];
+            }
+
+            let triggerBackground = setInterval(() => {
+                if(loading){
+                    setLoadBackground();
+                }else{
+                    clearInterval(triggerBackground);
+                }
+            }, 5000);
+
+            let triggerTip = setInterval(() => {
+                console.log('called')
+                if(loading){
+                    setLoadTip();
+                }else{
+                    clearInterval(triggerTip);
+                }
+            }, 2500);
+
+            triggerBackground();
+            triggerTip();
+        </script>
+
         <!-- browser settings -->
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,15 +100,35 @@
         </audio>
     </head>
     <body>
+        <div id="loading-container" class="loading-container fade-in">
+            <script>setLoadBackground();</script>
+            
+            <div id="load-footer" class="load-footer">
+                <div class="lds-ripple-container">
+                    <div class="lds-ripple"><div></div><div></div></div>
+                </div>
+                   
+                <div id="loading-tip" class="loading-tip">
+                    <p>Loading...</p>
+                </div>
+                
+                <script>setLoadTip();</script>
+        </div>
+
+        </div>
+
         <div id="container" class="container">
             <script>changeScreen(splash)</script>
         </div>
+
         <div id="modal" class="modal">
             <div id="modal-content" class="modal-content">
             </div>
         </div>
+
         <div id="snackbar"></div>
-        <div class="footer">
+
+        <div id="footer" class="footer">
             <div class="footer-box">
                 <center>
                     <span class="material-symbols-outlined">
