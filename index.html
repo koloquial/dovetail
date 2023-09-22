@@ -13,11 +13,13 @@
                     document.querySelector("#footer").style.display = "none";
                     document.querySelector("#loading-container").style.display = "block";
                 } else {
+                    setTimeout(() => {
                         document.querySelector("#loading-container").style.display = "none";
                         document.querySelector("#container").style.display = "block"; 
                         document.querySelector("#footer").style.display = "block"; 
                         loading = false;
                         playSound('music-title');
+                    }, 7000)
                 }
             };
 
@@ -144,6 +146,7 @@
                 </div>
                 
                 <script>setLoadTip();</script>
+            </div>
         </div>
 
         </div>
