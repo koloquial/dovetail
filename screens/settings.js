@@ -1,34 +1,12 @@
 function handleClose(){
-    playSound('system-back');
     document.getElementById("modal").style.display = "none";
 }
 
 function handleSounds(id){
-    playSound('system-slider');
     switch(id){
-        case "mute":
-            if(MUTE){
-                MUTE = false;
-                stopSound('music');
-            }else{
-                MUTE = true;
-            }
-        break;
-        case "system":
-                if(SYSTEM){
-                    SYSTEM = false;
-                }else{
-                    SYSTEM = true;
-                }
-            break;
-        case "music":
-            if(MUSIC){
-                MUSIC = false;
-                stopSound('music');
-            }else{
-                MUSIC = true;
-            }
-        break;
+        case "mute": MUTE ? MUTE = false : MUTE = true; MUTE ? stopSound('music') : '' ; break;
+        case "system": SYSTEM ? SYSTEM = false : SYSTEM = true; SYSTEM ? stopSound('system') : '' ; break;
+        case "music": MUSIC ? MUSIC = false : MUSIC = true; MUSIC ? stopSound('music') : '' ; break;
         default:
             break;
     }
@@ -83,9 +61,6 @@ function settings(){
                                 </label>
                             </fieldset>
                         </div>
-                        <script>
-                            console.log('test')
-                        </script>
 
                         <div style="display: block">
                             <fieldset>
@@ -133,17 +108,7 @@ function settings(){
                 </form>
             </div>
 
-            <div style="display: inline-block; vertical-align: top;">
-                <form>
-                    <fieldset>
-                        <legend>Controls</legend>
-
-                        <p>
-                            Use the arrow keys to move.
-                        </p>
-                    </fieldset>
-                </form>
-            </div>
+            
         </div>
     `
 }

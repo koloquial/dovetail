@@ -8,22 +8,13 @@ let MUTE = false;
 function playSound(id){
 
     if(!MUTE){
-        switch(id.split('-')[0]){
-            case 'system':
-                if(SYSTEM){
-                    document.getElementById(id).play();
-                }
-                break;
-            case 'music':
-                if(MUSIC){
-                    document.getElementById(id).play();
-                }
-                break;
-            case 'background':
-                if(BACKGROUND){
-                    document.getElementById(id).play();
-                }
-                break;
+        let prefix = id.split('-')[0];
+
+        switch(prefix){
+            case 'system': SYSTEM ? document.getElementById(id).play() : ''; break;
+            case 'background': BACKGROUND ? document.getElementById(id).play() : ''; break;
+            case 'music': MUSIC ? document.getElementById(id).play() : ''; break;
+            case 'sfx': SFX ? document.getElementById(id).play() : ''; break;
             default: break;
         }
     }

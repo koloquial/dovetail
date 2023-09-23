@@ -1,7 +1,4 @@
 function game(){
-   playSound('background-1');
-   playSound(`music-chill${Math.floor(Math.random() * 6)}`);
-   
     if(!HERO){
         loadGame();
     }

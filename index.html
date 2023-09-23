@@ -6,22 +6,6 @@
         <!-- loading -->
         <script>
             let loading = true; 
-            
-            document.onreadystatechange = function() {
-                if (document.readyState !== "complete") {
-                    document.querySelector("#container").style.display = "none";
-                    document.querySelector("#footer").style.display = "none";
-                    document.querySelector("#loading-container").style.display = "block";
-                } else {
-                    setTimeout(() => {
-                        document.querySelector("#loading-container").style.display = "none";
-                        document.querySelector("#container").style.display = "block"; 
-                        document.querySelector("#footer").style.display = "block"; 
-                        loading = false;
-                        playSound('music-title');
-                    }, 7000)
-                }
-            };
 
             function setLoadBackground(){
                 let randomImage = Math.ceil(Math.random() * 10);
@@ -55,9 +39,22 @@
                     clearInterval(triggerTip);
                 }
             }, 2500);
-
-            triggerBackground();
-            triggerTip();
+            
+            document.onreadystatechange = function() {
+                if (document.readyState !== "complete") {
+                    document.querySelector("#container").style.display = "none";
+                    document.querySelector("#footer").style.display = "none";
+                    document.querySelector("#loading-container").style.display = "block";
+                    triggerBackground();
+                    triggerTip();
+                } else {
+                    
+                        document.querySelector("#loading-container").style.display = "none";
+                        document.querySelector("#container").style.display = "block"; 
+                        document.querySelector("#footer").style.display = "block"; 
+                        loading = false;
+                }
+            };
         </script>
 
         <!-- browser settings -->
@@ -88,6 +85,7 @@
         <script type="text/javascript" src="./screens/newGame.js"></script>
         <script type="text/javascript" src="./screens/deleteGame.js"></script>
         <script type="text/javascript" src="./screens/settings.js"></script>
+        <script type="text/javascript" src="./screens/wiki.js"></script>
         <script type="text/javascript" src="./screens/game.js"></script>
 
         <!-- maps-->
@@ -111,24 +109,6 @@
         </audio>
         <audio id="music-acoustic1">
             <source src="./sounds/music-acoustic1.mp3" type="audio/mp3">
-        </audio>
-        <audio id="music-chill1">
-            <source src="./sounds/music-chill1.mp3" type="audio/mp3">
-        </audio>
-        <audio id="music-chill2">
-            <source src="./sounds/music-chill2.mp3" type="audio/mp3">
-        </audio>
-        <audio id="music-chill3">
-            <source src="./sounds/music-chill3.mp3" type="audio/mp3">
-        </audio>
-        <audio id="music-chill4">
-            <source src="./sounds/music-chill4.mp3" type="audio/mp3">
-        </audio>
-        <audio id="music-chill5">
-            <source src="./sounds/music-chill5.mp3" type="audio/mp3">
-        </audio>
-        <audio id="music-chill6">
-            <source src="./sounds/music-chill6.mp3" type="audio/mp3">
         </audio>
 
     </head>
@@ -163,7 +143,7 @@
         <div id="snackbar"></div>
 
         <div id="footer" class="footer">
-            <div class="footer-box">
+            <div class="footer-box" onclick="setModalContent(wiki);">
                 <center>
                     <span class="material-symbols-outlined">
                         developer_guide
@@ -171,7 +151,7 @@
                     <p>Wiki</p>
                 </center>
             </div>
-            <div class="footer-box" onclick="playSound('system-click'); setModalContent(settings);">
+            <div class="footer-box" onclick="setModalContent(settings);">
                 <center>
                     <span class="material-symbols-outlined">
                         settings
