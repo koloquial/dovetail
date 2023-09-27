@@ -4,12 +4,18 @@ let HERO;
 function loadGame(transfer){
     try{
         let load = localStorage.getItem("dovetail");
+
         if(load){
-            HERO = JSON.parse(load);
+            let raw =  JSON.parse(load);
+
+            HERO = new Hero(raw.name, raw.appearance, raw.lcation, raw.direction)
+
             setSnackbar(`<p>${HERO.name} has been found.</p>`);
+
             if(transfer){
                 changeScreen(game);
             }
+
         }else{
             //game file not found
             setSnackbar(`<p>Saved game not found.</p>`);

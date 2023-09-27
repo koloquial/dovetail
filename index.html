@@ -42,17 +42,16 @@
             
             document.onreadystatechange = function() {
                 if (document.readyState !== "complete") {
+                    triggerBackground();
+                    triggerTip();
                     document.querySelector("#container").style.display = "none";
                     document.querySelector("#footer").style.display = "none";
                     document.querySelector("#loading-container").style.display = "block";
-                    triggerBackground();
-                    triggerTip();
                 } else {
-                    
-                        document.querySelector("#loading-container").style.display = "none";
-                        document.querySelector("#container").style.display = "block"; 
-                        document.querySelector("#footer").style.display = "block"; 
-                        loading = false;
+                    document.querySelector("#loading-container").style.display = "none";
+                    document.querySelector("#container").style.display = "block"; 
+                    document.querySelector("#footer").style.display = "block"; 
+                    loading = false;
                 }
             };
         </script>
@@ -76,6 +75,9 @@
         <script type="text/javascript" src="./functions/setSnackbar.js"></script>
         <script type="text/javascript" src="./functions/playSound.js"></script>
         <script type="text/javascript" src="./functions/stopSound.js"></script>
+        <script type="text/javascript" src="./functions/renderMap.js"></script>
+        <script type="text/javascript" src="./functions/keyboard.js"></script>
+
 
         <!-- classes -->
         <script type="text/javascript" src="./classes/Hero.js"></script>

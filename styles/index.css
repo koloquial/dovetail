@@ -1,4 +1,5 @@
-@import url("palette.css");
+@import url("./palette.css");
+
 @import url("./system/font.css");
 @import url("./system/button.css");
 @import url("./system/input.css");
@@ -7,8 +8,14 @@
 @import url("./system/switch.css");
 @import url("./system/form.css");
 @import url("./system/select.css");
-@import url("loading.css");
+
+@import url("./loading.css");
+
 @import url("./hero/hero-down.css");
+
+@import url("./nature/grass.css");
+@import url("./nature/water.css");
+@import url("./nature/dirt.css");
 
 
 body{
@@ -62,8 +69,8 @@ body{
 
 .game-window{
     display: inline-block;
-    width: 700px;
-    height: 700px;
+    width: 770px;
+    height: 770px;
     background-color: white;
     margin-top: 7%;
     border: 1px solid black;
@@ -76,4 +83,14 @@ fieldset{
 
 legend{
     font-size: medium;
+}
+
+.grid-square{
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    display: inline-block;
+    border: 0;
+    padding: 0;
+    margin: 0;
 }
