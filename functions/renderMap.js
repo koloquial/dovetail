@@ -104,11 +104,14 @@ function renderMap(location){
 
     html += `</table>`
 
-    // console.log('html', html)
-    setTimeout(() => {
-        document.getElementById("game-window").innerHTML = html;
-    }, 0)
-   
-
+    try{
+        document.getElementById("game-window").innerHTML = html; 
+    }catch(e){
+        setLoading(true, 2500, () => { 
+            document.getElementById("game-window").innerHTML = html; 
+            setLoading(false);
+        });
+    }
+    
     
 }

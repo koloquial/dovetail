@@ -5,53 +5,12 @@
 
         <!-- loading -->
         <script>
-            let loading = true; 
-
-            function setLoadBackground(){
-                let randomImage = Math.ceil(Math.random() * 10);
-                document.getElementById("loading-container").style.backgroundImage = "url('./images/loading/" + randomImage + ".png')";
-            }
-
-            function setLoadTip(){
-                const tips = [
-                    "If your inputs aren't being recognized, be sure to click the mouse inside of the browswer window to make sure it is active.",
-                    "Once I have tips to write here this is where they will go.",
-                    "Perhaps locations of easter eggs will be located here.",
-                    "Perhaps messages will cycle based on rarity rather than completely random."
-                ]
-
-                let randomTip = Math.floor(Math.random() * tips.length);
-                document.getElementById("loading-tip").innerHTML = tips[randomTip];
-            }
-
-            const triggerBackground = setInterval(() => {
-                if(loading){
-                    setLoadBackground();
-                }else{
-                    clearInterval(triggerBackground);
-                }
-            }, 5000);
-
-            const triggerTip = setInterval(() => {
-                if(loading){
-                    setLoadTip();
-                }else{
-                    clearInterval(triggerTip);
-                }
-            }, 2500);
-            
             document.onreadystatechange = function() {
                 if (document.readyState !== "complete") {
-                    triggerBackground();
-                    triggerTip();
-                    document.querySelector("#container").style.display = "none";
-                    document.querySelector("#footer").style.display = "none";
-                    document.querySelector("#loading-container").style.display = "block";
+                    setLoading(true)
+
                 } else {
-                    document.querySelector("#loading-container").style.display = "none";
-                    document.querySelector("#container").style.display = "block"; 
-                    document.querySelector("#footer").style.display = "block"; 
-                    loading = false;
+                    setLoading(false)
                 }
             };
         </script>
@@ -77,7 +36,11 @@
         <script type="text/javascript" src="./functions/stopSound.js"></script>
         <script type="text/javascript" src="./functions/renderMap.js"></script>
         <script type="text/javascript" src="./functions/keyboard.js"></script>
-
+        <script type="text/javascript" src="./functions/triggerBackground.js"></script>
+        <script type="text/javascript" src="./functions/triggerTip.js"></script>
+        <script type="text/javascript" src="./functions/setLoadingBackground.js"></script>
+        <script type="text/javascript" src="./functions/setLoadingTip.js"></script>
+        <script type="text/javascript" src="./functions/setLoading.js"></script>
 
         <!-- classes -->
         <script type="text/javascript" src="./classes/Hero.js"></script>
@@ -116,7 +79,7 @@
     </head>
     <body>
         <div id="loading-container" class="loading-container fade-in">
-            <script>setLoadBackground();</script>
+            <script>setLoadingBackground();</script>
             
             <div id="load-footer" class="load-footer">
                 <div class="lds-ripple-container">
@@ -127,7 +90,7 @@
                     <p>Loading...</p>
                 </div>
                 
-                <script>setLoadTip();</script>
+                <script>setLoadingTip();</script>
             </div>
         </div>
 
