@@ -1,0 +1,101 @@
+@import url("./icon-srublory.css");
+
+.tree-basic{
+    background-color: #302400;
+}
+
+.srublory-stump{
+    display: block;
+    position: relative;
+    background-color: #302400;
+    width: 50px;
+    height: 55px;
+    left: 10px;
+    top: 0px;
+    background: linear-gradient(63deg, #302400 23%, transparent 23%) 7px 0px,
+    linear-gradient(63deg, transparent 74%, #302400 78%),
+    linear-gradient(63deg, transparent 34%, #302400 38%, #302400 58%, transparent 62%),
+    #483700;
+    background-size: 16px 48px;
+}
+
+.srublory-length{
+    display: block;
+    position: relative;
+    background-color: #302400;
+    width: 50px;
+    height: 145px;
+    left: 10px;
+    top: -160px;
+    z-index: 5000;
+    background: linear-gradient(63deg, #302400 23%, transparent 23%) 7px 0,
+    linear-gradient(63deg, transparent 74%, #302400 78%),
+    linear-gradient(63deg, transparent 34%, #302400 38%, #302400 58%, transparent 62%),
+    #483700;
+    background-size: 16px 48px;
+}
+
+.srublory-leaves-center{
+    display: block;
+    position: relative;
+    background-color: #022d0d;
+    width: 115px;
+    height: 170px;
+    left: -24px;
+    top: -450px;
+    z-index: 5000;
+    border-radius: 50% 50% 50% 50%;
+    background: radial-gradient(circle at 100% 150%, #022d0d 24%, #044317 24%, #044317 28%, #022d0d 28%, #022d0d 36%, #044317 36%, #044317 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0    150%, #022d0d 24%, #044317 24%, #044317 28%, #022d0d 28%, #022d0d 36%, #044317 36%, #044317 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50%  100%, #044317 10%, #022d0d 10%, #022d0d 23%, #044317 23%, #044317 30%, #022d0d 30%, #022d0d 43%, #044317 43%, #044317 50%, #022d0d 50%, #022d0d 63%, #044317 63%, #044317 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%, #044317 5%, #022d0d 5%, #022d0d 15%, #044317 15%, #044317 20%, #022d0d 20%, #022d0d 29%, #044317 29%, #044317 34%, #022d0d 34%, #022d0d 44%, #044317 44%, #044317 49%, transparent 49%, transparent),
+    radial-gradient(circle at 0    50%, #044317 5%, #022d0d 5%, #022d0d 15%, #044317 15%, #044317 20%, #022d0d 20%, #022d0d 29%, #044317 29%, #044317 34%, #022d0d 34%, #022d0d 44%, #044317 44%, #044317 49%, transparent 49%, transparent);
+    background-size: 100px 50px;
+    animation: shake2 25s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    animation-iteration-count: infinite;
+}
+
+.srublory-leaves-left{
+    display: block;
+    position: relative;
+    background-color: #022d0d;
+    width: 100px;
+    height: 120px;
+    left: -60px;
+    top: -560px;
+    z-index: 5000;
+    border-radius: 50% 50% 50% 50%;
+    rotate: -20deg;
+    background: radial-gradient(circle at 100% 150%, #022d0d 24%, #044317 24%, #044317 28%, #022d0d 28%, #022d0d 36%, #044317 36%, #044317 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0    150%, #022d0d 24%, #044317 24%, #044317 28%, #022d0d 28%, #022d0d 36%, #044317 36%, #044317 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50%  100%, #044317 10%, #022d0d 10%, #022d0d 23%, #044317 23%, #044317 30%, #022d0d 30%, #022d0d 43%, #044317 43%, #044317 50%, #022d0d 50%, #022d0d 63%, #044317 63%, #044317 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%, #044317 5%, #022d0d 5%, #022d0d 15%, #044317 15%, #044317 20%, #022d0d 20%, #022d0d 29%, #044317 29%, #044317 34%, #022d0d 34%, #022d0d 44%, #044317 44%, #044317 49%, transparent 49%, transparent),
+    radial-gradient(circle at 0    50%, #044317 5%, #022d0d 5%, #022d0d 15%, #044317 15%, #044317 20%, #022d0d 20%, #022d0d 29%, #044317 29%, #044317 34%, #022d0d 34%, #022d0d 44%, #044317 44%, #044317 49%, transparent 49%, transparent);
+    background-size: 100px 50px;
+    animation: shake2 25s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    animation-iteration-count: infinite;
+}
+
+.srublory-leaves-right{
+    display: block;
+    position: relative;
+    background-color: #022d0d;
+    width: 100px;
+    height: 120px;
+    left: 25px;
+    top: -680px;
+    z-index: 5000;
+    border-radius: 50% 50% 50% 50%;
+    rotate: 20deg;
+    background: radial-gradient(circle at 100% 150%, #022d0d 24%, #044317 24%, #044317 28%, #022d0d 28%, #022d0d 36%, #044317 36%, #044317 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0    150%, #022d0d 24%, #044317 24%, #044317 28%, #022d0d 28%, #022d0d 36%, #044317 36%, #044317 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50%  100%, #044317 10%, #022d0d 10%, #022d0d 23%, #044317 23%, #044317 30%, #022d0d 30%, #022d0d 43%, #044317 43%, #044317 50%, #022d0d 50%, #022d0d 63%, #044317 63%, #044317 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%, #044317 5%, #022d0d 5%, #022d0d 15%, #044317 15%, #044317 20%, #022d0d 20%, #022d0d 29%, #044317 29%, #044317 34%, #022d0d 34%, #022d0d 44%, #044317 44%, #044317 49%, transparent 49%, transparent),
+    radial-gradient(circle at 0    50%, #044317 5%, #022d0d 5%, #022d0d 15%, #044317 15%, #044317 20%, #022d0d 20%, #022d0d 29%, #044317 29%, #044317 34%, #022d0d 34%, #022d0d 44%, #044317 44%, #044317 49%, transparent 49%, transparent);
+    background-size: 100px 50px;
+    animation: shake2 25s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    animation-iteration-count: infinite;
+}

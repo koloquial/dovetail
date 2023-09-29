@@ -1,7 +1,8 @@
-function renderMap(location){
-    const heroCoordinates = HERO.getHeroCoordinates();
+const TREE_MEMORY = {};
 
-    // console.log('hero coordinates', heroCoordinates)
+function renderMap(location){
+    console.log('HERO', HERO)
+    const heroCoordinates = HERO.getHeroCoordinates();
 
     //render cells within a five tile radius around hero
     let startRow = heroCoordinates[0] - 4;
@@ -11,19 +12,12 @@ function renderMap(location){
 
     let html = `<table style="border-collapse: collapse;">`;
 
-    console.log('location', location)
-    // console.log('location length', location.length);
-    // console.log('start row', startRow)
-    // console.log('start cell', startCell)
-
     for(let i = 0; i < location.length; i++){
         if(i >= startRow && i <= lengthRow + startRow){
-            // console.log('called tr')
             html += `<tr>`;
 
             for(let j = 0; j < location[i].length; j++){
                 if(j >= startCell && j <= lengthCol + startCell){
-                    // console.log('called td')
                     html += `<td id='cell-${i}-${j}' class='grid-square`;
                     
                     if(location[i][j].includes('g')){
@@ -34,16 +28,17 @@ function renderMap(location){
                         html += ' water'
                     }
 
+                    
                     if(location[i][j].includes('d')){
                         html += ' dirt'
                     }
         
                     html += `'>`
 
+                    //location includes hero
                     if(location[i][j].includes('h')){
-                        // console.log('found hero')
                         switch(HERO.direction){
-                            case 'up': html += `<p>UP</p>`; break;
+                            case 'up': html += `<div style="width: 1px solid black"><p>UP</p></div>`; break;
                             case 'down': 
                                 html += `
                                 <center>
@@ -87,11 +82,18 @@ function renderMap(location){
                                 `
                                 break;
                             case 'left': 
-                            html += `<p>LEFT</p>`; break;
+                            html += `<div style="width: 1px solid black"><p>LEFT</p></div>`; break;
                             case 'right': 
-                            html += `<p>RIGHT</p>`; break;
+                            html += `<div style="width: 1px solid black"><p>RIGHT</p></div>`; break;
                             default: break;
                         }
+                    }
+
+                    //location includes tree
+                    if(location[i][j].includes('o')){
+                        let newSrublory = new Srublory(i, j);
+                        TREE_MEMORY[`tree-${i}-${j}`] = newSrublory 
+                        html += newSrublory.render()
                     }
                     html += `</td>`;
                 }

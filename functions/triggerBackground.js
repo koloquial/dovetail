@@ -1,5 +1,4 @@
 function triggerBackground(){ 
-    console.log('LOADING', LOADING)
     setInterval(() => {
         if(LOADING){
             setLoadingBackground();

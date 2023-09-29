@@ -1,0 +1,20 @@
+.icon-srublory{
+    background: url('./images/srublory.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-weight: bold !important;
+}
+
+.icon-srublory-seeds{
+    background: url('./images/srublory-seed.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-weight: bold !important;
+}
+
+.icon-wood{
+    background: url('./images/wood.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-weight: bold !important;
+}

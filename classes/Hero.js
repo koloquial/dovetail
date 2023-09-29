@@ -31,7 +31,6 @@ class Hero{
     }
 
     getDirection(){
-        console.log('get direction', this.direction)
         return this.direction;
     }
 
@@ -45,9 +44,7 @@ class Hero{
 
     setHeroCoordinates(coords){
         try{
-            console.log('add to?', this.location[coords[0]][coords[1]])
             this.location[coords[0]][coords[1]] += 'h';
-            console.log('added to', this.location[coords[0]][coords[1]])
         }catch(e){
             console.log('error setting hero coordinates', e);
         }
@@ -95,25 +92,24 @@ class Hero{
             switch(face){
                 case 'down':
                     if(this.location[row + 1][col].length === 1 && !this.location[row + 1][col].includes('w')){
-                        
                         return true;
                     }else{
                         return false;
                     }
                 case 'up':
-                    if(this.location[row - 1][col].length === 1){
+                    if(this.location[row - 1][col].length === 1 && !this.location[row - 1][col].includes('w')){
                         return true;
                     }else{
                         return false;
                     }
                 case 'left':
-                    if(this.location[row][col - 1].length === 1){
+                    if(this.location[row][col - 1].length === 1 && !this.location[row][col - 1].includes('w')){
                         return true
                     }else{
                         return false;
                     }
                 case 'right':
-                    if(this.location[row][col + 1].length === 1){
+                    if(this.location[row][col + 1].length === 1 && !this.location[row][col + 1].includes('w')){
                         return true
                     }else{
                         return false;

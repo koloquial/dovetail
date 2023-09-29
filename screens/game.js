@@ -3,8 +3,6 @@ function game(){
         loadGame();
     }
 
-    console.log('HERO', HERO)
-
     return `
         <center>
             <div id="game-window" class="game-window">

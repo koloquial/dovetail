@@ -22,6 +22,6 @@ function loadGame(transfer){
         }
     }catch(error){
         //error reading local storage
-        setSnackbar(`<p>Error loading save dgame.</p>`);
+        setSnackbar(`<p>Error loading saved game.</p>`);
     }
 }
