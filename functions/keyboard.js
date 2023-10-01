@@ -1,4 +1,6 @@
+//globals
 let KEY_LOCK = [];
+let SELECTED = 0;
 
 function keyPress(e){
     e = e || window.event;
@@ -13,7 +15,31 @@ function keyPress(e){
 
     if(key === 'a'){
         //action
-        HERO.inventory[0].action();
+        if(HERO.toolbar[SELECTED]){
+            HERO.toolbar[SELECTED].action()
+        }else{
+            console.log('No action available');
+        }
+    }
+
+    if(key === 'z'){
+        //move toolbar selection left
+        if(SELECTED === 0){
+            SELECTED = 5;
+        }else{
+            SELECTED -= 1;
+        }
+        renderToolbar();
+    }
+
+    if(key === 'x'){
+        //move toolbar selection right
+        if(SELECTED === 5){
+            SELECTED = 0;
+        }else{
+            SELECTED += 1;
+        }
+        renderToolbar();
     }
 
     //movement arrow keys

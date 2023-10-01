@@ -1,38 +1,52 @@
-let SELECTED = 0;
-
 function removeFromToolbar(item){
-    // HERO.inventory[item].toolbar = true;
+    //add to inventory
+    HERO.inventory.push(HERO.toolbar[item]);
 
-    // renderInventory();
-    // renderToolbar();
+    //remove from toolbar
+    HERO.toolbar.splice(item, 1);
+
+    //rerender menus
+    renderToolbar();
+    renderInventory();
 }
-
 function renderToolbar(){
-    let inventory = HERO.inventory;
-    const toolbar = [];
-    
-    for(let i = 0; i < inventory.length; i++){
-        if(inventory[i].toolbar){
-            toolbar.push(inventory[i])
-        }
-    }
-
     let html = '';
-    for(let i = 0; i <= 5; i++){
-        html += `<div id="toolbar-icon-${i}" class="`
 
-        if(SELECTED === i){
-            html += `toolbar-icon-selected `
-        }else{
-            html += `toolbar-icon `
-        }
+    try{
+        for(let i = 0; i < 5; i++){
+            html += `<div id="inventory-icon-${i}" class="toolbar-icon`
 
-        if(toolbar[i]){
-           html += `${toolbar[i].style}`
+            if(SELECTED === i){
+                html += `-selected `
+            }
+            
+            if(HERO.toolbar[i]){
+                html += ` ${HERO.toolbar[i].style}`;
+            }
+
+            html += `" onclick="`;
+
+            if(SHOW_MENU){
+                if(ACTIVE_MENU === 'inventory'){
+                    //put back into inventory
+                    html += `removeFromToolbar(${i})`
+                }else{
+                    html += ` console.log("no action")`
+                }
+
+            }else{
+                //perform action
+                if(HERO.toolbar[i]){
+                    html += `HERO.toolbar[${i}].action()`
+                }else{
+                    html += `console.log('no action available')`
+                }
+            }
+                        
+            html += `"></div>` 
         }
-    
-        html += `"> </div>`  
-      
+    }catch(e){
+        console.log('error rendering toolbar', e);
     }
 
     document.getElementById("toolbar").innerHTML = html;

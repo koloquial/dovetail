@@ -1,7 +1,9 @@
+//globals
+
+//holds tree objects: [key] tree-${i}-${j}
 const TREE_MEMORY = {};
 
 function renderMap(location){
-    // console.log('HERO', HERO)
     const heroCoordinates = HERO.getHeroCoordinates();
 
     //render cells within a five tile radius around hero
@@ -28,7 +30,6 @@ function renderMap(location){
                         html += ' water'
                     }
 
-                    
                     if(location[i][j].includes('d')){
                         html += ' dirt'
                     }
@@ -114,7 +115,7 @@ function renderMap(location){
     }catch(e){
         setLoading(true, 10, () => { 
             document.getElementById("game-window").innerHTML = html; 
-            renderToolbar(HERO.inventory);
+            renderToolbar();
             setLoading(false);
         });
     }

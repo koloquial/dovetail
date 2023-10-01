@@ -3,11 +3,11 @@ class Hatchet{
         this.name = 'Hatchet';
         this.type = 'Tool';
         this.style = 'icon-hatchet';
-        this.toolbar = toolbar;
         this.qty = 1;
     }
 
     action(direction, heroCoordinates, location){
+        console.log('hatchet action')
         switch(direction){
             case 'up':
                 if(location[heroCoordinates[0] - 1][heroCoordinates[1]].includes('o')){

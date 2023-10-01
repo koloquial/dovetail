@@ -1,25 +1,38 @@
 function addToToolbar(item){
-    HERO.inventory[item].toolbar = true;
+    console.log('called addtotoolbar')
+    //add item to toolbar
+    console.log('push item', HERO.inventory[item])
+    HERO.toolbar.push(HERO.inventory[item]);
 
+    console.log('toolbar', HERO.toolbar)
+
+    //remove item from inventory
+    HERO.inventory.splice(item, 1);
+
+    console.log('hero inventory', HERO.inventory)
+    console.log('update menus')
+    //update menus
     renderInventory();
     renderToolbar();
 }
 
 function renderInventory(){
-    let inventory = HERO.inventory;
-
     let html = '';
-    for(let i = 0; i < inventory.length; i++){
-        if(!inventory[i].toolbar){
+
+    try{
+        for(let i = 0; i < HERO.inventory.length; i++){
             html += `
-            <div 
-                id='toolbar-icon-${i}' 
-                class='toolbar-icon ${inventory[i].style}'
-                onclick='addToToolbar(${i})'>
-            </div>
-        `
+                <div 
+                    id='inventory-icon-${i}'
+                    class='toolbar-icon ${HERO.inventory[i].style}'
+                    onclick='addToToolbar(${i})'
+                >
+                </div>
+            `
         }
+    }catch(e){
+        console.log('error rendering inventory', e);
     }
 
-    document.getElementById("inventory").innerHTML = html;
+    document.getElementById("menu-content").innerHTML = html;
 }

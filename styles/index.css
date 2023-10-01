@@ -8,7 +8,6 @@
 @import url("./system/switch.css");
 @import url("./system/form.css");
 @import url("./system/select.css");
-@import url("./system/tabs.css");
 
 @import url("./loading.css");
 
@@ -142,9 +141,13 @@ legend{
     position: relative;
     visibility: hidden;
     width: 770px;
-    top: -866px;
+    top: -864px;
     left: 34px;
     height: 674px;
     background-color: rgba(255, 255, 255, .5);
     z-index: 10000;
+ }
+
+ .menu-content{
+     text-align: left;
  }
