@@ -124,12 +124,26 @@ legend{
     background-color:rgba(0, 0, 0, 0.16);
 }
 
+.toolbar-icon-selected{
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    background-color:rgba(0, 0, 0, 0.16);
+    position: relative;
+    top: -10px;
+}
+
 .menu{
     display: inline-block; 
     position: relative;
     visibility: hidden;
     width: 770px;
-    top: -864px;
+    top: -866px;
+    left: 34px;
     height: 674px;
     background-color: rgba(255, 255, 255, .5);
     z-index: 10000;

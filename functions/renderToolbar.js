@@ -1,6 +1,6 @@
+let SELECTED = 0;
+
 function removeFromToolbar(item){
-    console.log('SHOW MENU', SHOW_MENU);
-    console.log('remove item');
     // HERO.inventory[item].toolbar = true;
 
     // renderInventory();
@@ -19,14 +19,19 @@ function renderToolbar(){
 
     let html = '';
     for(let i = 0; i <= 5; i++){
+        html += `<div id="toolbar-icon-${i}" class="`
 
-        html += `<div id='toolbar-icon-${i}' class='toolbar-icon `
+        if(SELECTED === i){
+            html += `toolbar-icon-selected `
+        }else{
+            html += `toolbar-icon `
+        }
 
         if(toolbar[i]){
            html += `${toolbar[i].style}`
         }
     
-        html += `'> </div>`  
+        html += `"> </div>`  
       
     }
 
