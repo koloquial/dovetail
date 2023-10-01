@@ -8,7 +8,16 @@ function loadGame(transfer){
         if(load){
             let raw =  JSON.parse(load);
 
-            HERO = new Hero(raw.name, raw.appearance, raw.lcation, raw.direction)
+            HERO = new Hero(raw.name, raw.appearance, raw.lcation, raw.direction, raw.inventory)
+
+            let newInv = [];
+            for(let i = 0; i < HERO.inventory.length; i++){
+                if(HERO.inventory[i].name === 'Hatchet'){
+                    newInv.push(new Hatchet)
+                }
+            }
+
+            HERO.inventory = newInv;
 
             setSnackbar(`<p>${HERO.name} has been found.</p>`);
 

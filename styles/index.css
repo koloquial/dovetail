@@ -8,6 +8,7 @@
 @import url("./system/switch.css");
 @import url("./system/form.css");
 @import url("./system/select.css");
+@import url("./system/tabs.css");
 
 @import url("./loading.css");
 
@@ -17,7 +18,9 @@
 @import url("./nature/water.css");
 @import url("./nature/dirt.css");
 
-@import url("./nature/Tree/srublory.css");
+@import url("./nature/trees/srublory.css");
+
+@import url("./tools/tool-icons.css");
 
 
 body{
@@ -80,6 +83,17 @@ body{
     padding: 0;
 }
 
+.toolbar{
+   display: inline-block; 
+   position: relative;
+   width: 770px;
+   bottom: 100px;
+   height: 85px;
+   left: 5px;
+   z-index: 10000;
+   text-align: left;
+}
+
 fieldset{
     border: 1px solid rgb(154, 154, 154);
     border-radius: 5px;
@@ -98,3 +112,25 @@ legend{
     padding: 0;
     margin: 0;
 }
+
+.toolbar-icon{
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    background-color:rgba(0, 0, 0, 0.16);
+}
+
+.menu{
+    display: inline-block; 
+    position: relative;
+    visibility: hidden;
+    width: 770px;
+    top: -864px;
+    height: 674px;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 10000;
+ }

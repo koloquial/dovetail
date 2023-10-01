@@ -1,0 +1,41 @@
+.icon-hatchet{
+    background: url('./images/hatchet.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-weight: bold !important;
+}
+
+.icon-watering-can{
+    background: url('./images/watering-can.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-weight: bold !important;
+}
+
+.icon-pickaxe{
+    background: url('./images/pickaxe.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-weight: bold !important;
+}
+
+.icon-hoe{
+    background: url('./images/hoe.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-weight: bold !important;
+}
+
+.icon-scythe{
+    background: url('./images/scythe.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-weight: bold !important;
+}
+
+.icon-fishing-rod{
+    background: url('./images/fishing-rod.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-weight: bold !important;
+}

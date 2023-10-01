@@ -56,9 +56,12 @@ function handleSubmit(){
 
         let newHero = new Hero(
             document.getElementById("name").value, 
-            appearance
+            appearance,
+            _garden,
+            'down',
+            [new Hatchet]
         );
-
+       
         newHero.save();
 
         document.getElementById("modal").style.display = "none";

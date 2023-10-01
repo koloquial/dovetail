@@ -8,6 +8,14 @@ class Srublory{
         this.style = 'icon-srublory';
     }
 
+    chop(){
+
+    }
+
+    drop(){
+        console.log('tree struck')
+    }
+
     render(){
         return `
             <div id="tree-${this.row}-${this.col}">

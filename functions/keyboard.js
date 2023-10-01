@@ -1,9 +1,22 @@
+let KEY_LOCK = [];
+
 function keyPress(e){
     e = e || window.event;
 
     let key = e.key.toLowerCase();
-    // console.log(key)
+    console.log('input', key)
 
+    if(key === 'i'){
+        //open menu > inventory
+        openMenu('inventory');
+    }
+
+    if(key === 'a'){
+        //action
+        HERO.inventory[0].action();
+    }
+
+    //movement arrow keys
     if(key === 'arrowdown'){
         e.preventDefault();
         if(HERO.getDirection() === 'down'){

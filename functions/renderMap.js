@@ -1,7 +1,7 @@
 const TREE_MEMORY = {};
 
 function renderMap(location){
-    console.log('HERO', HERO)
+    // console.log('HERO', HERO)
     const heroCoordinates = HERO.getHeroCoordinates();
 
     //render cells within a five tile radius around hero
@@ -31,6 +31,10 @@ function renderMap(location){
                     
                     if(location[i][j].includes('d')){
                         html += ' dirt'
+                    }
+
+                    if(location[i][j].includes('x')){
+                        html += ' grass'
                     }
         
                     html += `'>`
@@ -103,14 +107,14 @@ function renderMap(location){
         }
     }
         
-
     html += `</table>`
 
     try{
         document.getElementById("game-window").innerHTML = html; 
     }catch(e){
-        setLoading(true, 2500, () => { 
+        setLoading(true, 10, () => { 
             document.getElementById("game-window").innerHTML = html; 
+            renderToolbar(HERO.inventory);
             setLoading(false);
         });
     }

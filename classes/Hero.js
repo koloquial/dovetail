@@ -1,9 +1,10 @@
 class Hero{
-    constructor(name, appearance, location = _garden, direction = 'down'){
+    constructor(name, appearance, location = _garden, direction = 'down', inventory = []){
         this.name = name;
         this.location = location;
         this.appearance = appearance;
         this.direction = direction;
+        this.inventory = inventory;
     }
 
     save(){
