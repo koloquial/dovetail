@@ -6,9 +6,9 @@ function loadGame(transfer){
         let load = localStorage.getItem("dovetail");
 
         if(load){
-            let raw =  JSON.parse(load);
+            let { name, appearance, location, direction, inventory, toolbar } =  JSON.parse(load);
 
-            HERO = new Hero(raw.name, raw.appearance, raw.lcation, raw.direction, raw.inventory)
+            HERO = new Hero(name, appearance, location, direction, inventory, toolbar)
 
             let newInv = [];
             for(let i = 0; i < HERO.inventory.length; i++){
@@ -25,8 +25,24 @@ function loadGame(transfer){
                 }
             }
 
-            console.log('new inv', newInv)
             HERO.inventory = newInv;
+
+            let newToolbar = [];
+            for(let i = 0; i < HERO.toolbar.length; i++){
+                let name = HERO.toolbar[i].name;
+
+                switch(name){
+                    case 'Hatchet': newToolbar.push(new Hatchet); break;
+                    case 'Hoe': newToolbar.push(new Hoe); break;
+                    case 'Fishing Rod': newToolbar.push(new FishingRod); break;
+                    case 'Scythe': newToolbar.push(new Scythe); break;
+                    case 'Watering Can': newToolbar.push(new WateringCan); break;
+                    case 'Pickaxe': newToolbar.push(new Pickaxe); break;
+                    default: break;
+                }
+            }
+
+            HERO.toolbar = newToolbar;
 
             setSnackbar(`<p>${HERO.name} has been found.</p>`);
 

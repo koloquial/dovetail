@@ -9,8 +9,16 @@ function game(){
             <div id="game-window" class="game-window"></div>
             <div id="toolbar" class="toolbar"></div>
             <div id="menu" class="menu">
-                <button onclick="renderCharacter()">Character</button>
-                <button onclick="renderInventory()">Inventory</button>
+                <div style="background-color: white; margin: 0; padding: 5px 25px 5px 25px; border-bottom: 1px solid black;">
+                    <div style="display: inline-block;">
+                        <button onclick="renderCharacter()">Character</button>
+                        <button onclick="renderInventory()">Inventory</button>
+                    </div>
+                    <div style="display: inline-block; float: right;">
+                        <button onclick="openMenu()">Close</button>
+                    </div>
+                </div>
+                
                 <div id='menu-content' class='menu-content'>
                 </div>
             </div>

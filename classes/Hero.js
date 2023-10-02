@@ -11,6 +11,8 @@ class Hero{
     save(){
         try{
             localStorage.setItem("dovetail", JSON.stringify(this));
+            console.log('hero saved')
+            console.log('HERO', this)
         }catch(error){
             console.log('error saving:', error);
         }

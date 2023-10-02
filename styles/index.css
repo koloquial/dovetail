@@ -152,12 +152,14 @@ legend{
     height: 730px;
     background-color: rgba(255, 255, 255, .5);
     z-index: 10000;
-    padding: 25px;
+
     border: 1px solid black;
+    text-align: left;
  }
 
  .menu-content{
-     text-align: left;
+    padding: 25px;
+    text-align: left;
  }
 
  .hidden{

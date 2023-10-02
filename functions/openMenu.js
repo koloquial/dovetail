@@ -6,6 +6,7 @@ function openMenu(subsection){
         document.getElementById("menu").style.visibility = 'hidden';
         SHOW_MENU = false;
         renderToolbar();
+        HERO.save();
         
     }else{
         switch(subsection){
