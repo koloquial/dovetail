@@ -1,13 +1,13 @@
-class Pickaxe{
+class FishingRod{
     constructor(){
-        this.name = 'Pickaxe';
+        this.name = 'Fishing Rod';
         this.type = 'Tool';
-        this.style = 'icon-pickaxe';
+        this.style = 'icon-fishing-rod';
         this.qty = 1;
     }
 
     action(direction, heroCoordinates, location){
-        console.log('pickaxe action')
+        console.log('fishing-rod action')
         switch(direction){
             case 'up':
                 if(location[heroCoordinates[0] - 1][heroCoordinates[1]].includes('o')){

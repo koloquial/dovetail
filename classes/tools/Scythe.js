@@ -1,13 +1,13 @@
-class Pickaxe{
+class Scythe{
     constructor(){
-        this.name = 'Pickaxe';
+        this.name = 'Scythe';
         this.type = 'Tool';
-        this.style = 'icon-pickaxe';
+        this.style = 'icon-scythe';
         this.qty = 1;
     }
 
     action(direction, heroCoordinates, location){
-        console.log('pickaxe action')
+        console.log('scythe action')
         switch(direction){
             case 'up':
                 if(location[heroCoordinates[0] - 1][heroCoordinates[1]].includes('o')){

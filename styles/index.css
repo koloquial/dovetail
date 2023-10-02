@@ -71,26 +71,22 @@ body{
     text-align: left;
 }
 
+#game-container{
+    display: block;
+    width: 770px;
+    height: 770px;
+    overflow: hidden;
+}
+
 .game-window{
     display: inline-block;
+    margin-top: 5%;
     width: 770px;
     height: 770px;
     background-color: white;
-    margin-top: 7%;
     border: 1px solid black;
     overflow: hidden;
     padding: 0;
-}
-
-.toolbar{
-   display: inline-block; 
-   position: relative;
-   width: 770px;
-   bottom: 100px;
-   height: 85px;
-   left: 5px;
-   z-index: 10000;
-   text-align: left;
 }
 
 fieldset{
@@ -111,6 +107,16 @@ legend{
     padding: 0;
     margin: 0;
 }
+
+.toolbar{
+    display: inline-block;
+    position: relative; 
+    left: -150px;
+    top: -150px;
+    height: 85px;
+    z-index: 10001;
+    text-align: left;
+ }
 
 .toolbar-icon{
     display: inline-block;
@@ -139,15 +145,21 @@ legend{
 .menu{
     display: inline-block; 
     position: relative;
+    top: -867px;
+    left: 0px;
     visibility: hidden;
-    width: 770px;
-    top: -864px;
-    left: 34px;
-    height: 674px;
+    width: 768px;
+    height: 730px;
     background-color: rgba(255, 255, 255, .5);
     z-index: 10000;
+    padding: 25px;
+    border: 1px solid black;
  }
 
  .menu-content{
      text-align: left;
+ }
+
+ .hidden{
+     visibility: hidden;
  }

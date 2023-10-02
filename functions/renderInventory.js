@@ -1,22 +1,21 @@
 function addToToolbar(item){
-    console.log('called addtotoolbar')
-    //add item to toolbar
-    console.log('push item', HERO.inventory[item])
-    HERO.toolbar.push(HERO.inventory[item]);
+    if(HERO.toolbar.length < 5){
+        //add item to toolbar
+        HERO.toolbar.push(HERO.inventory[item]);
+        
+        //remove item from inventory
+        HERO.inventory.splice(item, 1);
 
-    console.log('toolbar', HERO.toolbar)
-
-    //remove item from inventory
-    HERO.inventory.splice(item, 1);
-
-    console.log('hero inventory', HERO.inventory)
-    console.log('update menus')
-    //update menus
-    renderInventory();
-    renderToolbar();
+        //update menus
+        renderInventory();
+        renderToolbar();
+    }else{
+        setSnackbar(`<p>Toolbar is full.</p>`);
+    }
 }
 
 function renderInventory(){
+    ACTIVE_MENU = 'inventory';
     let html = '';
 
     try{

@@ -24,8 +24,8 @@ function keyPress(e){
 
     if(key === 'z'){
         //move toolbar selection left
-        if(SELECTED === 0){
-            SELECTED = 5;
+        if(SELECTED <= 0){
+            SELECTED = 4;
         }else{
             SELECTED -= 1;
         }
@@ -34,7 +34,7 @@ function keyPress(e){
 
     if(key === 'x'){
         //move toolbar selection right
-        if(SELECTED === 5){
+        if(SELECTED >= 4){
             SELECTED = 0;
         }else{
             SELECTED += 1;

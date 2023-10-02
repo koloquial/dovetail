@@ -59,8 +59,17 @@ function handleSubmit(){
             appearance,
             _garden,
             'down',
-            [new Hatchet]
+            [
+                new Hatchet, 
+                new Hoe, 
+                new FishingRod, 
+                new Pickaxe, 
+                new Scythe, 
+                new WateringCan
+            ]
         );
+
+        console.log('new hero', newHero)
        
         newHero.save();
 

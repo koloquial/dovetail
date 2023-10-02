@@ -1,5 +1,5 @@
 class Hatchet{
-    constructor(toolbar = false){
+    constructor(){
         this.name = 'Hatchet';
         this.type = 'Tool';
         this.style = 'icon-hatchet';
