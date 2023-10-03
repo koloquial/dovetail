@@ -26,9 +26,16 @@ class Srublory{
              //add wood to inventory
 
             //add status-update
-            addStatusUpdate(`+ 10 wood`)
+            let wood = Math.floor(Math.random() * 15) + 1
+            addStatusUpdate(`+ ${wood} wood`)
             
              //drop seed?
+             let randomDropSeed = Math.floor(Math.random() * 100) + 1; 
+             if(randomDropSeed <= 25){
+                 //drop seed
+                 let seeds = Math.floor(Math.random() * 3) + 1
+                 addStatusUpdate(`+ ${seeds} Srublory seeds`)
+             }
 
              //add experience to hatchet
              HERO.addXP('hatchet', 1)
