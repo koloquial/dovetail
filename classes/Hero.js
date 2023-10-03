@@ -1,18 +1,49 @@
 class Hero{
-    constructor(name, appearance, location = _garden, direction = 'down', inventory = [], toolbar = []){
+    constructor(name, appearance, location = _garden, direction = 'down', inventory = [], toolbar = [], skills = { hatchetLevel: 1, hatchetXP: 0, hatchetNext: 10 }){
         this.name = name;
         this.location = location;
         this.appearance = appearance;
         this.direction = direction;
         this.inventory = inventory;
         this.toolbar = toolbar;
+        this.skills = skills;
+    }
+
+    addXP(skill, amt){
+        switch(skill){
+            case 'hatchet':
+                this.skills.hatchetXP += amt;
+                if(this.skills.hatchetXP >= this.skills.hatchetNext){
+                    //level up
+                    this.skills.hatchetXP = 0;
+                    this.skills.hatchetNext *= 2;
+                    this.skills.hatchetLevel += 1;
+                    addStatusUpdate("Hatchet proficiency increased.")
+                }
+                break;
+            default: break;
+        }
+    }
+
+    getHatchetMultiplier(){
+        switch(this.skills.hatchetLevel){
+            case 1: return 1;
+            case 2: return 1.2;
+            case 3: return 1.4;
+            case 4: return 1.6;
+            case 5: return 1.8;
+            case 6: return 2;
+            case 7: return 2.2;
+            case 8: return 2.4;
+            case 9: return 2.6;
+            case 10: return 3;
+            default: return 1;
+        }
     }
 
     save(){
         try{
             localStorage.setItem("dovetail", JSON.stringify(this));
-            console.log('hero saved')
-            console.log('HERO', this)
         }catch(error){
             console.log('error saving:', error);
         }

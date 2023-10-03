@@ -1,9 +1,9 @@
 //globals
-let KEY_LOCK = [];
+let KEY_LOCK = false;
 let SELECTED = 0;
 
 function keyPress(e){
-    e = e || window.event;
+    // e = e || window.event;
 
     let key = e.key.toLowerCase();
     console.log('input', key)
@@ -13,10 +13,17 @@ function keyPress(e){
         openMenu('inventory');
     }
 
-    if(key === 'a'){
+    if(key === 'a' && !KEY_LOCK){
         //action
         if(HERO.toolbar[SELECTED]){
-            HERO.toolbar[SELECTED].action()
+            KEY_LOCK = true;
+            document.getElementById(`inventory-icon-${SELECTED}`).classList.add('flip');
+            HERO.toolbar[SELECTED].action();
+
+            setTimeout(() => { 
+                document.getElementById(`inventory-icon-${SELECTED}`).classList.remove('flip');
+                KEY_LOCK = false;
+            }, 350);
         }else{
             console.log('No action available');
         }

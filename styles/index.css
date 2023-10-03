@@ -140,6 +140,12 @@ legend{
     background-color:rgba(0, 0, 0, 0.16);
     position: relative;
     top: -10px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip{
+    transform: rotateY(360deg);
 }
 
 .menu{
@@ -152,7 +158,6 @@ legend{
     height: 730px;
     background-color: rgba(255, 255, 255, .5);
     z-index: 10000;
-
     border: 1px solid black;
     text-align: left;
  }
@@ -164,4 +169,20 @@ legend{
 
  .hidden{
      visibility: hidden;
+ }
+
+ .status-update{
+    display: inline-block;
+    position: relative;
+    top: -1200px;
+    left: -150px;
+    width: 420px;
+    height: 200px;
+    background-color: transparent;
+    z-index: 10000;
+    border: 0;
+    border-radius: 5px;
+    text-align: left;
+    vertical-align: bottom;
+    color: white;
  }

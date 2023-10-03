@@ -22,6 +22,7 @@ function game(){
                 <div id='menu-content' class='menu-content'>
                 </div>
             </div>
+            <div id="status-update" class="status-update"></div>
         </div>
     </center>
     <script>

@@ -96,9 +96,15 @@ function renderMap(location){
 
                     //location includes tree
                     if(location[i][j].includes('o')){
-                        let newSrublory = new Srublory(i, j);
-                        TREE_MEMORY[`tree-${i}-${j}`] = newSrublory 
-                        html += newSrublory.render()
+                        if(TREE_MEMORY[`tree-${i}-${j}`]){
+                            html += TREE_MEMORY[`tree-${i}-${j}`].render()
+                        }else{
+                            let newSrublory = new Srublory(i, j);
+                            TREE_MEMORY[`tree-${i}-${j}`] = newSrublory
+                            html += newSrublory.render() 
+                        }
+                        
+                        
                     }
                     html += `</td>`;
                 }

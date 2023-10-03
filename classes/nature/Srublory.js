@@ -9,11 +9,37 @@ class Srublory{
     }
 
     chop(){
+        //play sound
+        document.getElementById('audio-chop-wood').play();
 
+        //damage health
+        this.health -= 1 * HERO.getHatchetMultiplier();
+
+        //check if tree fell
+        if(this.health <= 0){
+             //remove tree from map
+             document.getElementById(`tree-${this.row}-${this.col}`).style.visibility = 'none';
+
+             //change tree tile to grass
+             HERO.location[this.row][this.col] = 'g';
+
+             //add wood to inventory
+
+            //add status-update
+            addStatusUpdate(`+ 10 wood`)
+            
+             //drop seed?
+
+             //add experience to hatchet
+             HERO.addXP('hatchet', 1)
+
+            
+
+
+        }
     }
 
     drop(){
-        console.log('tree struck')
     }
 
     render(){

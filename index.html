@@ -31,8 +31,6 @@
         <script type="text/javascript" src="./functions/loadGame.js"></script>
         <script type="text/javascript" src="./functions/setModalContent.js"></script>
         <script type="text/javascript" src="./functions/setSnackbar.js"></script>
-        <script type="text/javascript" src="./functions/playSound.js"></script>
-        <script type="text/javascript" src="./functions/stopSound.js"></script>
         <script type="text/javascript" src="./functions/renderMap.js"></script>
         <script type="text/javascript" src="./functions/keyboard.js"></script>
         <script type="text/javascript" src="./functions/triggerBackground.js"></script>
@@ -44,6 +42,7 @@
         <script type="text/javascript" src="./functions/openMenu.js"></script>
         <script type="text/javascript" src="./functions/renderInventory.js"></script>
         <script type="text/javascript" src="./functions/renderCharacter.js"></script>
+        <script type="text/javascript" src="./functions/statusUpdate.js"></script>
 
         <!-- classes -->
         <script type="text/javascript" src="./classes/Hero.js"></script>
@@ -67,7 +66,9 @@
         <script type="text/javascript" src="./maps/_garden.js"></script>
 
         <!-- audio -->
-
+        <audio id="audio-chop-wood">
+            <source src="./sounds/chop-wood.mp3" type="audio/mp3">
+        </audio>
     </head>
     <body>
         <div id="loading-container" class="loading-container fade-in">
@@ -96,8 +97,6 @@
             <div id="modal-content" class="modal-content">
             </div>
         </div>
-
-        
 
         <div id="footer" class="footer">
             <div class="footer-box" onclick="setModalContent(wiki);">
