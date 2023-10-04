@@ -1,5 +1,19 @@
 class Hero{
-    constructor(name, appearance, location = _garden, direction = 'down', inventory = [], toolbar = [], skills = { hatchetLevel: 1, hatchetXP: 0, hatchetNext: 10 }){
+    constructor(
+        name, appearance, location = _garden, direction = 'down', 
+        inventory = [], toolbar = [], 
+        skills = { 
+            hatchetLevel: 1, 
+            hatchetXP: 0, 
+            hatchetNext: 10
+        },
+        sounds = {
+            mute: false,
+            system: true,
+            music: false,
+            bgsfx: false,
+            sfx: true,
+        }){
         this.name = name;
         this.location = location;
         this.appearance = appearance;
@@ -7,6 +21,11 @@ class Hero{
         this.inventory = inventory;
         this.toolbar = toolbar;
         this.skills = skills;
+        this.sounds = sounds;
+    }
+
+    setSound(key, value){
+        this.sounds[key] = value;
     }
 
     addXP(skill, amt){

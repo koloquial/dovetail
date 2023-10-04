@@ -10,8 +10,8 @@ class Srublory{
 
     chop(){
         //play sound
-        document.getElementById('audio-chop-wood').play();
-
+        playSound('sfx', 'audio-chop-wood');
+       
         //damage health
         this.health -= 1 * HERO.getHatchetMultiplier();
 
@@ -39,10 +39,6 @@ class Srublory{
 
              //add experience to hatchet
              HERO.addXP('hatchet', 1)
-
-            
-
-
         }
     }
 
