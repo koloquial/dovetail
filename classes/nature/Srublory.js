@@ -23,22 +23,26 @@ class Srublory{
              //change tree tile to grass
              HERO.location[this.row][this.col] = 'g';
 
-             //add wood to inventory
+             //add wood to inventory at 2
+             let woodAmt = Math.floor(Math.random() * 15) * HERO.getHatchetMultiplier() + 1;
+             let newWood = new Wood(woodAmt);
+             console.log('addWood', newWood)
+             HERO.addToInventory(newWood);
 
             //add status-update
-            let wood = Math.floor(Math.random() * 15) + 1
-            addStatusUpdate(`+ ${wood} wood`)
+            addStatusUpdate(`+ ${woodAmt} wood`)
             
              //drop seed?
              let randomDropSeed = Math.floor(Math.random() * 100) + 1; 
              if(randomDropSeed <= 25){
                  //drop seed
-                 let seeds = Math.floor(Math.random() * 3) + 1
-                 addStatusUpdate(`+ ${seeds} Srublory seeds`)
+                 let seedAmt = Math.floor(Math.random() * 3) * HERO.getHatchetMultiplier() + 1;
+                 HERO.addToInventory(new SrublorySeed(seedAmt));
+                 addStatusUpdate(`+ ${seedAmt} Srublory seed${seedAmt > 1 ? 's' : ''}`);
              }
 
              //add experience to hatchet
-             HERO.addXP('hatchet', 1)
+             HERO.addXP('hatchet', 1);
         }
     }
 

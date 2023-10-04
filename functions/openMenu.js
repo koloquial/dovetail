@@ -14,6 +14,10 @@ function openMenu(subsection){
                 ACTIVE_MENU = 'inventory';
                 renderInventory();
                 break;
+                case 'character': 
+                ACTIVE_MENU = 'character';
+                renderCharacter();
+                break;
             default: break;
         }
 

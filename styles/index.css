@@ -156,7 +156,7 @@ legend{
     visibility: hidden;
     width: 768px;
     height: 730px;
-    background-color: rgba(255, 255, 255, .5);
+    background-color: aliceblue;
     z-index: 10000;
     border: 1px solid black;
     text-align: left;
@@ -185,4 +185,22 @@ legend{
     text-align: left;
     vertical-align: bottom;
     color: white;
+ }
+
+ .inv-qty{
+     display: inline-block;
+     background-color: aliceblue;
+     position: relative;
+     left: -40px;
+     top: -5px;
+     padding: 2px;
+     height: 30px;
+     width: 30px;
+     border-radius: 50%;
+     color: black;
+     text-align: center;
+     font-size: smaller;
+     border: 1px solid black;
+     margin: 0px;
+     margin-right: -40px;
  }

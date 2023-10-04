@@ -24,6 +24,20 @@ class Hero{
         this.sounds = sounds;
     }
 
+    addToInventory(item){
+        let validate = false;
+        for(let i = 0; i < this.inventory.length; i++){
+            if(this.inventory[i].name === item.name){
+                validate = true;
+                this.inventory[i].qty += item.qty;
+            }
+        }
+
+        if(!validate){
+            this.inventory.push(item);
+        }
+    }
+
     setSound(key, value){
         this.sounds[key] = value;
     }

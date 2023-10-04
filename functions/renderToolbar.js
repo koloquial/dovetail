@@ -1,6 +1,6 @@
 function removeFromToolbar(item){
     //add to inventory
-    HERO.inventory.push(HERO.toolbar[item]);
+    HERO.addToInventory(HERO.toolbar[item]);
 
     //remove from toolbar
     HERO.toolbar.splice(item, 1);
@@ -43,11 +43,20 @@ function renderToolbar(){
                 }
             }
                         
-            html += `"></div>` 
+            html += `"></div>`
+
+            if(HERO.toolbar[i]){
+                if(HERO.toolbar[i].qty > 1){
+                    html += `<div class='inv-qty'><p>${HERO.toolbar[i].qty}</p></div>`
+                }
+            }
+
         }
     }catch(e){
         console.log('error rendering toolbar', e);
     }
+
+    
 
     document.getElementById("toolbar").innerHTML = html;
 }
