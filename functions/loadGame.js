@@ -11,8 +11,12 @@ function loadGame(transfer){
             //pull HERO class constructor values
             let { name, appearance, location, direction, inventory, toolbar, skills, sounds } =  JSON.parse(load);
 
+            console.log('load toolbar', toolbar)
+
             //make a new hero
             HERO = new Hero(name, appearance, location, direction, inventory, toolbar, skills, sounds)
+
+            console.log(HERO);
 
             //REFACTOR CODE BELOW
 
@@ -51,6 +55,8 @@ function loadGame(transfer){
                 }
             }
             HERO.toolbar = newToolbar;
+            
+            console.log('TOOLBAR', HERO.toolbar)
 
             //send toast message
             setSnackbar(`<p>${HERO.name} has been found.</p>`);
