@@ -5,9 +5,9 @@
 .grass{
     background:
     radial-gradient(#198038 15%, transparent 16%) 0 0,
-    radial-gradient(#198038 15%, transparent 16%) 2px 2px,
-    radial-gradient(#044317 15%, transparent 20%) 0 1px,
+  
+    
     radial-gradient(#044317 15%, transparent 20%) 2px 2px;
     background-color: #198038;
-    background-size: 5px 5px;
+    background-size: 5px 16px;
 }

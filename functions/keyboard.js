@@ -1,6 +1,7 @@
 //globals
 let KEY_LOCK = false;
 let SELECTED = 0;
+let MINIMAP = false;
 
 function keyPress(e){
     // e = e || window.event;
@@ -10,6 +11,19 @@ function keyPress(e){
     if(key === 'i'){
         //open menu > inventory
         openMenu('inventory');
+    }
+
+    if(key === 'm'){
+        //reveal minimap
+        console.log('key', e)
+        console.log('MINIMAP', MINIMAP)
+       if(!MINIMAP){
+            document.getElementById('minimap').style.visibility = 'visible';
+            MINIMAP = true;
+       }else{
+            document.getElementById('minimap').style.visibility = 'hidden';
+            MINIMAP = false;
+        }
     }
 
     if(key === 'a' && !KEY_LOCK){
