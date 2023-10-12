@@ -204,3 +204,31 @@ legend{
      margin: 0px;
      margin-right: -40px;
  }
+
+ .minimap{
+    display: inline-block;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.23);
+    border: 1px solid black;
+    top: -1580px;
+    left: -450px;
+    width: 250px;
+    height: 300px;
+    border-radius: 5px;
+    z-index: 9000;
+    opacity: .2
+ }
+
+ .minimap:hover{
+    opacity: 1;
+ }
+
+ .minimap-square{
+    width: 5px;
+    height: 5px;
+    text-align: center;
+    display: inline-block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}

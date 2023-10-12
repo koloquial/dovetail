@@ -57,7 +57,7 @@ function handleSubmit(){
         let newHero = new Hero(
             document.getElementById("name").value, 
             appearance,
-            _garden,
+            generateMap(),
             'down',
             [
                 new Hatchet, 

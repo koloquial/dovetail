@@ -4,6 +4,10 @@
     border-radius: 5px;
 }
 
+.hero-marker{
+    background-color: yellow;
+}
+
 .hero-down-container{
     display: block;
 }

@@ -23,6 +23,7 @@ function game(){
                 </div>
             </div>
             <div id="status-update" class="status-update"></div>
+            <div id="minimap" class="minimap"></div>
         </div>
     </center>
     <script>

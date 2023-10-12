@@ -7,7 +7,6 @@ class FishingRod{
     }
 
     action(direction, heroCoordinates, location){
-        console.log('fishing-rod action')
         switch(direction){
             case 'up':
                 if(location[heroCoordinates[0] - 1][heroCoordinates[1]].includes('o')){

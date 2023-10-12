@@ -1,5 +1,4 @@
 //globals
-
 //holds tree objects: [key] tree-${i}-${j}
 const TREE_MEMORY = {};
 
@@ -39,7 +38,7 @@ function renderMap(location){
                     }
         
                     html += `'>`
-
+                 
                     //location includes hero
                     if(location[i][j].includes('h')){
                         switch(HERO.direction){
@@ -103,24 +102,22 @@ function renderMap(location){
                             TREE_MEMORY[`tree-${i}-${j}`] = newSrublory
                             html += newSrublory.render() 
                         }
-                        
-                        
                     }
                     html += `</td>`;
                 }
             }
-    
             html += `</tr>`
         }
     }
-        
     html += `</table>`
 
     try{
         document.getElementById("game-window").innerHTML = html; 
+        renderMiniMap();
     }catch(e){
         setLoading(true, 10, () => { 
             document.getElementById("game-window").innerHTML = html; 
+            renderMiniMap();
             renderToolbar();
             setLoading(false);
         });

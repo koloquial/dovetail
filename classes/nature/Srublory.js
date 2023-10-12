@@ -26,7 +26,6 @@ class Srublory{
              //add wood to inventory at 2
              let woodAmt = Math.floor(Math.random() * 15) * HERO.getHatchetMultiplier() + 1;
              let newWood = new Wood(woodAmt);
-             console.log('addWood', newWood)
              HERO.addToInventory(newWood);
 
             //add status-update

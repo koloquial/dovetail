@@ -1,6 +1,6 @@
 class Hero{
     constructor(
-        name, appearance, location = _garden, direction = 'down', 
+        name, appearance, location = [], direction = 'down', 
         inventory = [], toolbar = [], 
         skills = { 
             hatchetLevel: 1, 

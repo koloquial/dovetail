@@ -6,7 +6,6 @@ function keyPress(e){
     // e = e || window.event;
 
     let key = e.key.toLowerCase();
-    console.log('input', key)
 
     if(key === 'i'){
         //open menu > inventory

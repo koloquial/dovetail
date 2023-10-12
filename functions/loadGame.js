@@ -11,52 +11,44 @@ function loadGame(transfer){
             //pull HERO class constructor values
             let { name, appearance, location, direction, inventory, toolbar, skills, sounds } =  JSON.parse(load);
 
-            console.log('load toolbar', toolbar)
+            //assign object classes back to inventory
+            let newInv = [];
+            for(let i = 0; i < inventory.length; i++){
+                let name = inventory[i].name;
+                switch(name){
+                    case 'Hatchet': newInv.push(new Hatchet); break;
+                    case 'Hoe': newInv.push(new Hoe); break;
+                    case 'Fishing Rod': newInv.push(new FishingRod); break;
+                    case 'Scythe': newInv.push(new Scythe); break;
+                    case 'Watering Can': newInv.push(new WateringCan); break;
+                    case 'Pickaxe': newInv.push(new Pickaxe); break;
+                    case 'Wood': newInv.push(new Wood(inventory[i].qty)); break;
+                    case 'Srublory Seed': newInv.push(new SrublorySeed(inventory[i].qty)); break;
+                    default: break;
+                }
+            }
+            inventory = newInv;
+
+             //assign object classes back to items in toolbar
+             let newToolbar = [];
+             for(let i = 0; i < toolbar.length; i++){
+                 let name = toolbar[i].name;
+                 switch(name){
+                     case 'Hatchet': newToolbar.push(new Hatchet); break;
+                     case 'Hoe': newToolbar.push(new Hoe); break;
+                     case 'Fishing Rod': newToolbar.push(new FishingRod); break;
+                     case 'Scythe': newToolbar.push(new Scythe); break;
+                     case 'Watering Can': newToolbar.push(new WateringCan); break;
+                     case 'Pickaxe': newToolbar.push(new Pickaxe); break;
+                     case 'Wood': newToolbar.push(new Wood(inventory[i].qty)); break;
+                     case 'Srublory Seed': newToolbar.push(new SrublorySeed(inventory[i].qty)); break;
+                     default: break;
+                 }
+             }
+            toolbar = newToolbar;
 
             //make a new hero
             HERO = new Hero(name, appearance, location, direction, inventory, toolbar, skills, sounds)
-
-            console.log(HERO);
-
-            //REFACTOR CODE BELOW
-
-            //assign object classes back to inventory
-            let newInv = [];
-            for(let i = 0; i < HERO.inventory.length; i++){
-                let name = HERO.inventory[i].name;
-                switch(name){
-                    case 'Hatchet': newInv.push(new Hatchet); break;
-                    case 'Hoe': newInv.push(new Hoe); break;
-                    case 'Fishing Rod': newInv.push(new FishingRod); break;
-                    case 'Scythe': newInv.push(new Scythe); break;
-                    case 'Watering Can': newInv.push(new WateringCan); break;
-                    case 'Pickaxe': newInv.push(new Pickaxe); break;
-                    case 'Wood': newInv.push(new Wood(HERO.inventory[i].qty)); break;
-                    case 'Srublory Seed': newInv.push(new SrublorySeed(HERO.inventory[i].qty)); break;
-                    default: break;
-                }
-            }
-            HERO.inventory = newInv;
-
-            //assign object classes back to items in toolbar
-            let newToolbar = [];
-            for(let i = 0; i < HERO.toolbar.length; i++){
-                let name = HERO.toolbar[i].name;
-                switch(name){
-                    case 'Hatchet': newInv.push(new Hatchet); break;
-                    case 'Hoe': newInv.push(new Hoe); break;
-                    case 'Fishing Rod': newInv.push(new FishingRod); break;
-                    case 'Scythe': newInv.push(new Scythe); break;
-                    case 'Watering Can': newInv.push(new WateringCan); break;
-                    case 'Pickaxe': newInv.push(new Pickaxe); break;
-                    case 'Wood': newInv.push(new Wood); break;
-                    case 'Srublory Seed': newInv.push(new SrublorySeed); break;
-                    default: break;
-                }
-            }
-            HERO.toolbar = newToolbar;
-            
-            console.log('TOOLBAR', HERO.toolbar)
 
             //send toast message
             setSnackbar(`<p>${HERO.name} has been found.</p>`);
