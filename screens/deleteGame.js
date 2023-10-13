@@ -25,7 +25,7 @@ function deleteGame(){
     }
 
     return `
-        <div>
+        <div style="background-color: #000000; margin: 0; padding: 5px 25px 5px 25px; border-bottom: 1px solid black;">
             <table style="width: 100%">
                 <tbody>
                     <tr>
@@ -38,7 +38,9 @@ function deleteGame(){
                     </tr>
                 </tbody>
             </table>
-            <hr />
+        </div>
+
+        <div class='menu-content'>
             <p>
                 Are you sure you would like to delete this saved file from your browser cache?  This process cannot be undone.
             </p>

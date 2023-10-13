@@ -15,8 +15,6 @@ function keyPress(e){
 
     if(key === 'm'){
         //reveal minimap
-        console.log('key', e)
-        console.log('MINIMAP', MINIMAP)
        if(!MINIMAP){
             document.getElementById('minimap').style.visibility = 'visible';
             MINIMAP = true;
@@ -36,9 +34,9 @@ function keyPress(e){
             setTimeout(() => { 
                 document.getElementById(`inventory-icon-${SELECTED}`).classList.remove('flip');
                 KEY_LOCK = false;
-            }, 350);
+            }, 500);
         }else{
-            console.log('No action available');
+            setSnackbar(`<p>No action available.</p>`);
         }
     }
 

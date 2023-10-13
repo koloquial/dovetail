@@ -115,12 +115,14 @@ function renderMap(location) {
     document.getElementById("game-window").innerHTML = html;
     renderMiniMap();
     renderStamina();
+    renderHealth();
   } catch (e) {
     setLoading(true, 10, () => {
       document.getElementById("game-window").innerHTML = html;
       renderMiniMap();
       renderToolbar();
       renderStamina();
+      renderHealth();
       setLoading(false);
     });
   }

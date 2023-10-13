@@ -236,18 +236,41 @@ legend{
   position: relative;
   background-color: rgba(0, 0, 0, 0.23);
   border: 1px solid black;
-  top: -1225px;
-  left: 175px;
-  width: 200px;
+  top: -1220px;
+  left: 360px;
+  width: 100px;
   height: 25px;
   border-radius: 5px;
   z-index: 9000;
+  text-align: left;
+  transform: rotate(-90deg);
 }
 
-.stamina-wedge{
-  background-color: green;
-  background: linear-gradient(to bottom, green, darkgreen);   
-  width: 100%;
+.stamina-wedge{  
+  display: inline-block;
+  position: relative;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.health-bar{
+  display: inline-block;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.23);
+  border: 1px solid black;
+  top: -1219px;
+  left: 295px;
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  z-index: 9000;
+  text-align: left;
+  transform: rotate(90deg);
+}
+
+.health-wedge{  
+  display: inline-block;
+  position: relative;
   height: 25px;
   border-radius: 5px;
 }

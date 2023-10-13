@@ -10,14 +10,20 @@ function game() {
             <div id="toolbar" class="toolbar"></div>
             <div id="menu" class="menu">
                 <div style="background-color: #000000; margin: 0; padding: 5px 25px 5px 25px; border-bottom: 1px solid black;">
-                    <div style="display: inline-block;">
-                        <button onclick="renderCharacter()">Character</button>
-                        <button onclick="renderInventory()">Inventory</button>
-                    </div>
-                    <div style="display: inline-block; float: right;">
-                        <button onclick="openMenu()">Close</button>
-                    </div>
-                </div>
+                <table style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td><h2 id='active-menu-heading'></h2></td>
+                            <td>
+                                <div style="float: right">
+                                    <button onclick="openMenu()">Close</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br />
                 
                 <div id='menu-content' class='menu-content'>
                 </div>
@@ -25,6 +31,7 @@ function game() {
             <div id="status-update" class="status-update"></div>
             <div id="minimap" class="minimap"></div>
             <div id="stamina-bar" class="stamina-bar"></div>
+            <div id="health-bar" class="health-bar"></div>
         </div>
     </center>
     <script>

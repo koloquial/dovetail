@@ -68,8 +68,6 @@ function handleSubmit(){
                 new WateringCan
             ]
         );
-
-        console.log('new hero', newHero)
        
         newHero.save();
 
@@ -89,7 +87,7 @@ function handleCancel(){
 
 function newGame(){
     return `
-        <div>
+        <div style="background-color: #000000; margin: 0; padding: 5px 25px 5px 25px; border-bottom: 1px solid black;">
             <table style="width: 100%">
                 <tbody>
                     <tr>
@@ -102,7 +100,8 @@ function newGame(){
                     </tr>
                 </tbody>
             </table>
-            <hr />
+        </div>
+        <div class='menu-content'>
 
             <center>
             <div id="hero-preview" class="hero-preview">
@@ -272,6 +271,8 @@ function newGame(){
             <center>
                 <button onclick="handleSubmit()">Start Game</button>
             </center>
+            <br />
         </div>
+    </div>
     `
 }

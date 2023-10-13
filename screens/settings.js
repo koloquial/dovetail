@@ -28,7 +28,7 @@ function settings(){
 
     if(HERO){
         return `
-            <div>
+            <div style="background-color: #000000; margin: 0; padding: 5px 25px 5px 25px; border-bottom: 1px solid black;">
                 <table style="width: 100%">
                     <tbody>
                         <tr>
@@ -41,9 +41,10 @@ function settings(){
                         </tr>
                     </tbody>
                 </table>
-                <hr />
+            </div>
+            <br />
 
-                <div style="display: inline-block">
+                <div class='menu-content'>
                     <form>
                         <fieldset>
                             <legend>Sound</legend>

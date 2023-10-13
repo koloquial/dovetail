@@ -28,6 +28,13 @@ class Hero {
     this.sounds = sounds;
   }
 
+  getStamina(){
+    return this.skills.stamina;
+  }
+  setStamina(amt){
+    this.skills.stamina += amt;
+  }
+
   addToInventory(item) {
     let validate = false;
     for (let i = 0; i < this.inventory.length; i++) {
