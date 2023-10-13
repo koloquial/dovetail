@@ -6,30 +6,92 @@ class Hoe{
         this.qty = 1;
     }
 
-    action(direction, heroCoordinates, location){
-        console.log('hoe action')
-        switch(direction){
-            case 'up':
-                if(location[heroCoordinates[0] - 1][heroCoordinates[1]].includes('o')){
-                    TREE_MEMORY[`tree-${heroCoordinates[0] - 1}-${heroCoordinates[1]}`].chop();
-                }
-            break;
-            case 'down':
-                if(location[heroCoordinates[0] + 1][heroCoordinates[1]].includes('o')){
-                    TREE_MEMORY[`tree-${heroCoordinates[0] + 1}-${heroCoordinates[1]}`].chop();
-                }
-                break;
-            case 'left':
-                if(location[heroCoordinates[0]][heroCoordinates[1] - 1].includes('o')){
-                    TREE_MEMORY[`tree-${heroCoordinates[0]}-${heroCoordinates[1] - 1}`].chop();
-                }
-                break;
-            case 'right':
-                if(location[heroCoordinates[0]][heroCoordinates[1] + 1].includes('o')){
-                    TREE_MEMORY[`tree-${heroCoordinates[0]}-${heroCoordinates[1] + 1}`].chop()
-                }
-                break;
-            default: break;
+    action(){
+        const coords = HERO.getHeroCoordinates();
+        const invalid = ['o', 'w']
+        let valid = true;
+        if(HERO.getStamina() > 0){
+            switch(HERO.direction){
+                case 'up':
+                    for(let i = 0; i < invalid.length; i++){
+                        if(HERO.location[coords[0]  - 1][coords[1]].includes(invalid[i])){
+                            valid = false;
+                        }
+                    }
+
+                    if(valid){
+                        HERO.location[coords[0]  - 1][coords[1]] = 'd';
+                        HERO.setStamina(-3 + HERO.getHoeMultiplier());
+
+                        //play sound
+                        playSound('sfx', 'audio-dig1');
+
+                        //add experience to hatchet
+                        HERO.addXP('hoe', .2);
+                    }
+
+                    break;
+                case 'down':
+                    for(let i = 0; i < invalid.length; i++){
+                        if(HERO.location[coords[0]  + 1][coords[1]].includes(invalid[i])){
+                            valid = false;
+                        }
+                    }
+
+                    if(valid){
+                        HERO.location[coords[0]  + 1][coords[1]] = 'd';
+                        HERO.setStamina(-3 + HERO.getHoeMultiplier());
+
+                        //play sound
+                        playSound('sfx', 'audio-dig1');
+
+                        //add experience to hatchet
+                        HERO.addXP('hoe', .2);
+                    }
+
+                    break;
+                case 'right':
+                    for(let i = 0; i < invalid.length; i++){
+                        if(HERO.location[coords[0]][coords[1]  + 1].includes(invalid[i])){
+                            valid = false;
+                        }
+                    }
+
+                    if(valid){
+                        HERO.location[coords[0]][coords[1]  + 1] = 'd';
+                        HERO.setStamina(-3 + HERO.getHoeMultiplier());
+
+                        //play sound
+                        playSound('sfx', 'audio-dig1');
+
+                        //add experience to hatchet
+                        HERO.addXP('hoe', .2);
+                    }
+
+                    break;
+                case 'left':
+                    for(let i = 0; i < invalid.length; i++){
+                        if(HERO.location[coords[0]][coords[1]  - 1].includes(invalid[i])){
+                            valid = false;
+                        }
+                    }
+
+                    if(valid){
+                        HERO.location[coords[0]][coords[1]  - 1] = 'd';
+                        HERO.setStamina(-3 + HERO.getHoeMultiplier());
+
+                        //play sound
+                        playSound('sfx', 'audio-dig1');
+
+                        //add experience to hatchet
+                        HERO.addXP('hoe', .2);
+                    }
+
+                    break;
+                default: break;
+            }
+        }else{
+            setSnackbar(`<p>No stamina to complete action.</p>`);
         }
     }
 }

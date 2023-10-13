@@ -9,7 +9,10 @@ class Hero {
       maxHealth: 100,
       hatchetLevel: 1,
       hatchetXP: 0,
-      hatchetNext: 10
+      hatchetNext: 10,
+      hoeLevel: 1,
+      hoeXP: 0,
+      hoeNext: 10
     },
     sounds = {
       mute: false,
@@ -71,6 +74,22 @@ class Hero {
 
   getHatchetMultiplier() {
     switch (this.skills.hatchetLevel) {
+      case 1: return 1;
+      case 2: return 1.2;
+      case 3: return 1.4;
+      case 4: return 1.6;
+      case 5: return 1.8;
+      case 6: return 2;
+      case 7: return 2.2;
+      case 8: return 2.4;
+      case 9: return 2.6;
+      case 10: return 3;
+      default: return 1;
+    }
+  }
+
+  getHoeMultiplier() {
+    switch (this.skills.hoeLevel) {
       case 1: return 1;
       case 2: return 1.2;
       case 3: return 1.4;

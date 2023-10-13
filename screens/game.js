@@ -10,21 +10,20 @@ function game() {
             <div id="toolbar" class="toolbar"></div>
             <div id="menu" class="menu">
                 <div style="background-color: #000000; margin: 0; padding: 5px 25px 5px 25px; border-bottom: 1px solid black;">
-                <table style="width: 100%">
-                    <tbody>
-                        <tr>
-                            <td><h2 id='active-menu-heading'></h2></td>
-                            <td>
-                                <div style="float: right">
-                                    <button onclick="openMenu()">Close</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <br />
-                
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td><h2 id='active-menu-heading'></h2></td>
+                                <td>
+                                    <div style="float: right">
+                                        <button onclick="openMenu()">Close</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br />
                 <div id='menu-content' class='menu-content'>
                 </div>
             </div>
