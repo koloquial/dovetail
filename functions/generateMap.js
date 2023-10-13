@@ -34,22 +34,28 @@ function generateMap(){
     let lakeSize, lakex, lakey;
 
     for(let j = 0; j < lakes; j++){
-        lakeSize = Math.floor(Math.random() * lakeSizeSeed + 3);
-        lakex = Math.floor(Math.random() * mapSize);
-        lakey = Math.floor(Math.random() * mapSize);
 
-        if(mapSize - lakeSize <= 0){
-            lakex += lakeSize;
-        }else{
-            lakex -= lakeSize;
-        }
+        let validLake = false;
 
-        for(let k = 0; k < lakeSize; k++){
-            for(let l = 0; l < lakeSize; l++){
-                garden[lakex + k][lakey + l] = 'w';
-                garden[lakex + k][lakey + l] = 'w';
+        while(!validLake){
+            try{
+                lakeSize = Math.floor(Math.random() * lakeSizeSeed + 3);
+                lakex = Math.floor(Math.random() * mapSize);
+                lakey = Math.floor(Math.random() * mapSize);
+    
+    
+                for(let k = 0; k < lakeSize; k++){
+                    for(let l = 0; l < lakeSize; l++){
+                        garden[lakex + k][lakey + l] = 'w';
+                        garden[lakex + k][lakey + l] = 'w';
+                    }
+                }
+                
+                validLake = true;
+            }catch(e){
+                console.log('error setting lake.')
             }
-        }      
+        }
     }
 
     //place hero

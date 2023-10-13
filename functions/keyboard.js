@@ -8,10 +8,14 @@ function keyPress(e){
 
     let key = e.key.toLowerCase();
 
+    console.log('key press:', key)
+
     if(key === 'i'){
         //open menu > inventory
         openMenu('inventory');
     }
+
+
 
     if(key === 'm'){
         //reveal minimap
@@ -38,6 +42,32 @@ function keyPress(e){
         }else{
             setSnackbar(`<p>No action available.</p>`);
         }
+    }
+
+    if(key === '1'){
+        console.log('1 pressed')
+        SELECTED = 0;
+        renderToolbar();
+    }
+
+    if(key === '2'){
+        SELECTED = 1;
+        renderToolbar();
+    }
+
+    if(key === '3'){
+        SELECTED = 2;
+        renderToolbar();
+    }
+
+    if(key === '4'){
+        SELECTED = 3;
+        renderToolbar();
+    }
+
+    if(key === '5'){
+        SELECTED = 4;
+        renderToolbar();
     }
 
     if(key === 'z'){
