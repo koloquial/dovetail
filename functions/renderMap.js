@@ -2,49 +2,49 @@
 //holds tree objects: [key] tree-${i}-${j}
 const TREE_MEMORY = {};
 
-function renderMap(location){
-    const heroCoordinates = HERO.getHeroCoordinates();
+function renderMap(location) {
+  const heroCoordinates = HERO.getHeroCoordinates();
 
-    //render cells within a five tile radius around hero
-    let startRow = heroCoordinates[0] - 4;
-    let startCell = heroCoordinates[1] - 5;
-    let lengthRow = 10;
-    let lengthCol = 10;
+  //render cells within a five tile radius around hero
+  let startRow = heroCoordinates[0] - 4;
+  let startCell = heroCoordinates[1] - 5;
+  let lengthRow = 10;
+  let lengthCol = 10;
 
-    let html = `<table style="border-collapse: collapse;">`;
+  let html = `<table style="border-collapse: collapse;">`;
 
-    for(let i = 0; i < location.length; i++){
-        if(i >= startRow && i <= lengthRow + startRow){
-            html += `<tr>`;
+  for (let i = 0; i < location.length; i++) {
+    if (i >= startRow && i <= lengthRow + startRow) {
+      html += `<tr>`;
 
-            for(let j = 0; j < location[i].length; j++){
-                if(j >= startCell && j <= lengthCol + startCell){
-                    html += `<td id='cell-${i}-${j}' class='grid-square`;
-                    
-                    if(location[i][j].includes('g')){
-                        html += ' grass'
-                    }
+      for (let j = 0; j < location[i].length; j++) {
+        if (j >= startCell && j <= lengthCol + startCell) {
+          html += `<td id='cell-${i}-${j}' class='grid-square`;
 
-                    if(location[i][j].includes('w')){
-                        html += ' water'
-                    }
+          if (location[i][j].includes('g')) {
+            html += ' grass'
+          }
 
-                    if(location[i][j].includes('d')){
-                        html += ' dirt'
-                    }
+          if (location[i][j].includes('w')) {
+            html += ' water'
+          }
 
-                    if(location[i][j].includes('x')){
-                        html += ' grass'
-                    }
-        
-                    html += `'>`
-                 
-                    //location includes hero
-                    if(location[i][j].includes('h')){
-                        switch(HERO.direction){
-                            case 'up': html += `<div style="width: 1px solid black"><p>UP</p></div>`; break;
-                            case 'down': 
-                                html += `
+          if (location[i][j].includes('d')) {
+            html += ' dirt'
+          }
+
+          if (location[i][j].includes('x')) {
+            html += ' grass'
+          }
+
+          html += `'>`
+
+          //location includes hero
+          if (location[i][j].includes('h')) {
+            switch (HERO.direction) {
+              case 'up': html += `<div style="width: 1px solid black"><p>UP</p></div>`; break;
+              case 'down':
+                html += `
                                 <center>
                                 <div id="hero" class="hero-down">
                                     <div id="head" class="head-down">
@@ -84,44 +84,46 @@ function renderMap(location){
                                 </div>
                                 </center>
                                 `
-                                break;
-                            case 'left': 
-                            html += `<div style="width: 1px solid black"><p>LEFT</p></div>`; break;
-                            case 'right': 
-                            html += `<div style="width: 1px solid black"><p>RIGHT</p></div>`; break;
-                            default: break;
-                        }
-                    }
-
-                    //location includes tree
-                    if(location[i][j].includes('o')){
-                        if(TREE_MEMORY[`tree-${i}-${j}`]){
-                            html += TREE_MEMORY[`tree-${i}-${j}`].render()
-                        }else{
-                            let newSrublory = new Srublory(i, j);
-                            TREE_MEMORY[`tree-${i}-${j}`] = newSrublory
-                            html += newSrublory.render() 
-                        }
-                    }
-                    html += `</td>`;
-                }
+                break;
+              case 'left':
+                html += `<div style="width: 1px solid black"><p>LEFT</p></div>`; break;
+              case 'right':
+                html += `<div style="width: 1px solid black"><p>RIGHT</p></div>`; break;
+              default: break;
             }
-            html += `</tr>`
-        }
-    }
-    html += `</table>`
+          }
 
-    try{
-        document.getElementById("game-window").innerHTML = html; 
-        renderMiniMap();
-    }catch(e){
-        setLoading(true, 10, () => { 
-            document.getElementById("game-window").innerHTML = html; 
-            renderMiniMap();
-            renderToolbar();
-            setLoading(false);
-        });
+          //location includes tree
+          if (location[i][j].includes('o')) {
+            if (TREE_MEMORY[`tree-${i}-${j}`]) {
+              html += TREE_MEMORY[`tree-${i}-${j}`].render()
+            } else {
+              let newSrublory = new Srublory(i, j);
+              TREE_MEMORY[`tree-${i}-${j}`] = newSrublory
+              html += newSrublory.render()
+            }
+          }
+          html += `</td>`;
+        }
+      }
+      html += `</tr>`
     }
-    
-    
+  }
+  html += `</table>`
+
+  try {
+    document.getElementById("game-window").innerHTML = html;
+    renderMiniMap();
+    renderStamina();
+  } catch (e) {
+    setLoading(true, 10, () => {
+      document.getElementById("game-window").innerHTML = html;
+      renderMiniMap();
+      renderToolbar();
+      renderStamina();
+      setLoading(false);
+    });
+  }
+
+
 }

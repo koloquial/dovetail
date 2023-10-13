@@ -1,29 +1,28 @@
 //global
 let FILTER = 'All';
 
-function addToToolbar(item){
-    if(HERO.toolbar.length < 5){
-        //add item to toolbar
-        HERO.toolbar.push(HERO.inventory[item]);
-        
-        //remove item from inventory
-        HERO.inventory.splice(item, 1);
+function addToToolbar(item) {
+  if (HERO.toolbar.length < 5) {
+    //add item to toolbar
+    HERO.toolbar.push(HERO.inventory[item]);
 
-        //update menus
-        renderInventory();
-        renderToolbar();
-    }else{
-        setSnackbar(`<p>Toolbar is full.</p>`);
-    }
+    //remove item from inventory
+    HERO.inventory.splice(item, 1);
+
+    //update menus
+    renderInventory();
+    renderToolbar();
+  } else {
+    setSnackbar(`<p>Toolbar is full.</p>`);
+  }
 }
 
-function renderInventory(){
-    ACTIVE_MENU = 'inventory';
-    let html = `
-   
+function renderInventory() {
+  ACTIVE_MENU = 'inventory';
+  let html = `
         <table style="width: 100%">
             <tr>
-                <td><h1><b>Inventory</b></h1></td>
+                <td><h2><b>Inventory</b></h2></td>
                 <td>
                     <div style="float: right">
                         <form>
@@ -41,13 +40,11 @@ function renderInventory(){
                 </td>
             </tr>
         </table>
-        <hr />
-    
     `
 
-    try{
-        for(let i = 0; i < HERO.inventory.length; i++){
-            html += `
+  try {
+    for (let i = 0; i < HERO.inventory.length; i++) {
+      html += `
                 <div 
                     id='inventory-icon-${i}'
                     class='toolbar-icon ${HERO.inventory[i].style}'
@@ -55,13 +52,13 @@ function renderInventory(){
                 >
                 </div>
             `
-            if(HERO.inventory[i].qty > 1){
-                html += `<div class='inv-qty'><p>${HERO.inventory[i].qty}</p></div>`
-            }
-        }
-    }catch(e){
-        console.log('error rendering inventory', e);
+      if (HERO.inventory[i].qty > 1) {
+        html += `<div class='inv-qty'><p>${HERO.inventory[i].qty}</p></div>`
+      }
     }
+  } catch (e) {
+    console.log('error rendering inventory', e);
+  }
 
-    document.getElementById("menu-content").innerHTML = html;
+  document.getElementById("menu-content").innerHTML = html;
 }
