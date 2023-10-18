@@ -8,5 +8,6 @@ function openFishing(){
     }else{
         document.getElementById("fishing-window").style.visibility = 'visible';
         SHOW_FISHING = true;
+        runFishing();
     }
 }
