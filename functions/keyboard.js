@@ -10,14 +10,14 @@ function keyPress(e){
 
     console.log('key press:', key)
 
-    if(key === 'i'){
+    if(key === 'i' && !KEY_LOCK && !SHOW_FISHING){
         //open menu > inventory
         openMenu('inventory');
     }
 
 
 
-    if(key === 'm'){
+    if(key === 'm' && !KEY_LOCK && !SHOW_FISHING){
         //reveal minimap
        if(!MINIMAP){
             document.getElementById('minimap').style.visibility = 'visible';
@@ -29,48 +29,55 @@ function keyPress(e){
     }
 
     if(key === 'a' && !KEY_LOCK){
-        //action
-        if(HERO.toolbar[SELECTED]){
-            KEY_LOCK = true;
-            document.getElementById(`inventory-icon-${SELECTED}`).classList.add('flip');
-            HERO.toolbar[SELECTED].action();
 
-            setTimeout(() => { 
-                document.getElementById(`inventory-icon-${SELECTED}`).classList.remove('flip');
-                KEY_LOCK = false;
-            }, 500);
+        if(SHOW_FISHING){
+            //fishing functions
+
         }else{
-            setSnackbar(`<p>No action available.</p>`);
+            //action
+            if(HERO.toolbar[SELECTED]){
+                KEY_LOCK = true;
+                document.getElementById(`inventory-icon-${SELECTED}`).classList.add('flip');
+                HERO.toolbar[SELECTED].action();
+
+                setTimeout(() => { 
+                    document.getElementById(`inventory-icon-${SELECTED}`).classList.remove('flip');
+                    KEY_LOCK = false;
+                }, 500);
+            }else{
+                setSnackbar(`<p>No action available.</p>`);
+            }
         }
+        
     }
 
-    if(key === '1'){
+    if(key === '1' && !KEY_LOCK && !SHOW_FISHING){
         console.log('1 pressed')
         SELECTED = 0;
         renderToolbar();
     }
 
-    if(key === '2'){
+    if(key === '2' && !KEY_LOCK && !SHOW_FISHING){
         SELECTED = 1;
         renderToolbar();
     }
 
-    if(key === '3'){
+    if(key === '3' && !KEY_LOCK && !SHOW_FISHING){
         SELECTED = 2;
         renderToolbar();
     }
 
-    if(key === '4'){
+    if(key === '4' && !KEY_LOCK && !SHOW_FISHING){
         SELECTED = 3;
         renderToolbar();
     }
 
-    if(key === '5'){
+    if(key === '5' && !KEY_LOCK && !SHOW_FISHING){
         SELECTED = 4;
         renderToolbar();
     }
 
-    if(key === 'z'){
+    if(key === 'z' && !KEY_LOCK && !SHOW_FISHING){
         //move toolbar selection left
         if(SELECTED <= 0){
             SELECTED = 4;
@@ -80,7 +87,7 @@ function keyPress(e){
         renderToolbar();
     }
 
-    if(key === 'x'){
+    if(key === 'x' && !KEY_LOCK && !SHOW_FISHING){
         //move toolbar selection right
         if(SELECTED >= 4){
             SELECTED = 0;
@@ -91,7 +98,7 @@ function keyPress(e){
     }
 
     //movement arrow keys
-    if(key === 'arrowdown'){
+    if(key === 'arrowdown' && !KEY_LOCK && !SHOW_FISHING){
         e.preventDefault();
         if(HERO.getDirection() === 'down'){
             if(HERO.checkSpace('down')){
@@ -104,7 +111,7 @@ function keyPress(e){
         }
     }
 
-    if(key === 'arrowup'){
+    if(key === 'arrowup' && !KEY_LOCK && !SHOW_FISHING){
         e.preventDefault();
         if(HERO.getDirection() === 'up'){
             if(HERO.checkSpace('up')){
@@ -117,7 +124,7 @@ function keyPress(e){
         }
     }
 
-    if(key === 'arrowleft'){
+    if(key === 'arrowleft' && !KEY_LOCK && !SHOW_FISHING){
         e.preventDefault();
         if(HERO.getDirection() === 'left'){
             if(HERO.checkSpace('left')){
@@ -130,7 +137,7 @@ function keyPress(e){
         }
     }
 
-    if(key === 'arrowright'){
+    if(key === 'arrowright' && !KEY_LOCK && !SHOW_FISHING){
         e.preventDefault();
         if(HERO.getDirection() === 'right'){
             if(HERO.checkSpace('right')){

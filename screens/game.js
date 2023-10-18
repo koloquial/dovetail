@@ -31,6 +31,9 @@ function game() {
             <div id="minimap" class="minimap"></div>
             <div id="stamina-bar" class="stamina-bar"></div>
             <div id="health-bar" class="health-bar"></div>
+            <div id="fishing-window" class="fishing-window">
+                <div id="fishing-game" class="fishing-game"></div>
+            </div>
         </div>
     </center>
     <script>

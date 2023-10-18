@@ -275,3 +275,18 @@ legend{
   height: 25px;
   border-radius: 5px;
 }
+
+.fishing-window{
+  display: inline-block; 
+  position: relative;
+  top: -1885px;
+  left: 0px;
+  visibility: hidden;
+  width: 768px;
+  height: 730px;
+  background-color: rgba(51, 51, 51, .7);
+  z-index: 10000;
+  border: 1px solid black;
+  text-align: left;
+  color: white;
+}

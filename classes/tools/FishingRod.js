@@ -6,29 +6,34 @@ class FishingRod{
         this.qty = 1;
     }
 
-    action(direction, heroCoordinates, location){
-        switch(direction){
-            case 'up':
-                if(location[heroCoordinates[0] - 1][heroCoordinates[1]].includes('o')){
-                    TREE_MEMORY[`tree-${heroCoordinates[0] - 1}-${heroCoordinates[1]}`].chop();
-                }
-            break;
-            case 'down':
-                if(location[heroCoordinates[0] + 1][heroCoordinates[1]].includes('o')){
-                    TREE_MEMORY[`tree-${heroCoordinates[0] + 1}-${heroCoordinates[1]}`].chop();
-                }
-                break;
-            case 'left':
-                if(location[heroCoordinates[0]][heroCoordinates[1] - 1].includes('o')){
-                    TREE_MEMORY[`tree-${heroCoordinates[0]}-${heroCoordinates[1] - 1}`].chop();
-                }
-                break;
-            case 'right':
-                if(location[heroCoordinates[0]][heroCoordinates[1] + 1].includes('o')){
-                    TREE_MEMORY[`tree-${heroCoordinates[0]}-${heroCoordinates[1] + 1}`].chop()
-                }
-                break;
-            default: break;
+    action(){
+        const coords = HERO.getHeroCoordinates();
+
+        const invalid = ['o', 'd', 'g'];
+
+        let valid = true;
+
+        if(HERO.getStamina() > 0){
+            switch(HERO.direction){
+                case 'up':
+                    for(let i = 0; i < invalid.length; i++){
+                        if(HERO.location[coords[0]  - 1][coords[1]].includes(invalid[i])){
+                            valid = false;
+                        }
+                    }
+
+                    if(valid){
+                        //call fishing game
+                        openFishing();
+
+                        //play sounds
+                    }
+
+                    break;
+                default: break;
+            }
+        }else{
+            setSnackbar(`<p>No stamina to complete action.</p>`);
         }
     }
 }
