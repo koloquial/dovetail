@@ -1,5 +1,7 @@
 @import url("./palette.css");
+@import url("./hero/hero-down.css");
 
+/* system styles */
 @import url("./system/font.css");
 @import url("./system/button.css");
 @import url("./system/input.css");
@@ -8,20 +10,18 @@
 @import url("./system/switch.css");
 @import url("./system/form.css");
 @import url("./system/select.css");
+@import url("./system/gamepad.css");
 
 @import url("./loading.css");
+@import url("./animation.css");
 
-@import url("./hero/hero-down.css");
-
+/* nature styles */
 @import url("./nature/grass.css");
 @import url("./nature/water.css");
 @import url("./nature/dirt.css");
-
 @import url("./nature/trees/srublory.css");
 
 @import url("./tools/tool-icons.css");
-@import url("./animation.css");
-
 
 body{
   padding: 0px;
@@ -329,5 +329,6 @@ legend{
   height: 400px;
   width: 400px;
   margin-left: 35px;
-    background-color: rgba(0, 45, 156, .5);
+  background-color: rgba(0, 45, 156, .5);
 }
+

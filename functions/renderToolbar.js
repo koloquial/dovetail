@@ -35,12 +35,19 @@ function renderToolbar(){
                 }
 
             }else{
+                
+                html += `(function(){
+                    SELECTED = ${i};
+                    renderToolbar();
+                })();`
+               
                 //perform action
-                if(HERO.toolbar[i]){
-                    html += `HERO.toolbar[${i}].action()`
-                }else{
-                    html += `console.log('no action available')`
-                }
+                // if(HERO.toolbar[i]){
+                //     html += `HERO.toolbar[${i}].action()`
+                // }else{
+
+                //     html += `console.log('no action available')`
+                // }
             }
                         
             html += `"></div>`
@@ -55,8 +62,6 @@ function renderToolbar(){
     }catch(e){
         console.log('error rendering toolbar', e);
     }
-
-    
 
     document.getElementById("toolbar").innerHTML = html;
 }

@@ -6,151 +6,176 @@ let MINIMAP = false;
 function keyPress(e){
     // e = e || window.event;
 
-    let key = e.key.toLowerCase();
+    if(HERO){
+        let key = e.key.toLowerCase();
 
-    console.log('key press:', key)
-
-    if(key === 'i' && !KEY_LOCK && !SHOW_FISHING){
-        //open menu > inventory
-        openMenu('inventory');
-    }
-
-
-
-    if(key === 'm' && !KEY_LOCK && !SHOW_FISHING){
-        //reveal minimap
-       if(!MINIMAP){
-            document.getElementById('minimap').style.visibility = 'visible';
-            MINIMAP = true;
-       }else{
-            document.getElementById('minimap').style.visibility = 'hidden';
-            MINIMAP = false;
+        console.log('key press:', key)
+    
+        if(key === 'i' && !KEY_LOCK && !SHOW_FISHING){
+            //open menu > inventory
+            openMenu('inventory');
         }
-    }
-
-    if(key === 'a' && !KEY_LOCK){
-
-        if(SHOW_FISHING){
-            //fishing functions
-
-        }else{
-            //action
-            if(HERO.toolbar[SELECTED]){
-                KEY_LOCK = true;
-                document.getElementById(`inventory-icon-${SELECTED}`).classList.add('flip');
-                HERO.toolbar[SELECTED].action();
-
-                setTimeout(() => { 
-                    document.getElementById(`inventory-icon-${SELECTED}`).classList.remove('flip');
-                    KEY_LOCK = false;
-                }, 500);
-            }else{
-                setSnackbar(`<p>No action available.</p>`);
+    
+    
+    
+        if(key === 'm' && !KEY_LOCK && !SHOW_FISHING){
+            //reveal minimap
+           if(!MINIMAP){
+                document.getElementById('minimap').style.visibility = 'visible';
+                MINIMAP = true;
+           }else{
+                document.getElementById('minimap').style.visibility = 'hidden';
+                MINIMAP = false;
             }
         }
-        
-    }
-
-    if(key === '1' && !KEY_LOCK && !SHOW_FISHING){
-        console.log('1 pressed')
-        SELECTED = 0;
-        renderToolbar();
-    }
-
-    if(key === '2' && !KEY_LOCK && !SHOW_FISHING){
-        SELECTED = 1;
-        renderToolbar();
-    }
-
-    if(key === '3' && !KEY_LOCK && !SHOW_FISHING){
-        SELECTED = 2;
-        renderToolbar();
-    }
-
-    if(key === '4' && !KEY_LOCK && !SHOW_FISHING){
-        SELECTED = 3;
-        renderToolbar();
-    }
-
-    if(key === '5' && !KEY_LOCK && !SHOW_FISHING){
-        SELECTED = 4;
-        renderToolbar();
-    }
-
-    if(key === 'z' && !KEY_LOCK && !SHOW_FISHING){
-        //move toolbar selection left
-        if(SELECTED <= 0){
-            SELECTED = 4;
-        }else{
-            SELECTED -= 1;
+    
+        if(key === 'a' && !KEY_LOCK){
+    
+            if(SHOW_FISHING){
+                //fishing functions
+    
+            }else{
+                //action
+                if(HERO.toolbar[SELECTED]){
+                    KEY_LOCK = true;
+                    document.getElementById(`inventory-icon-${SELECTED}`).classList.add('flip');
+                    HERO.toolbar[SELECTED].action();
+    
+                    setTimeout(() => { 
+                        document.getElementById(`inventory-icon-${SELECTED}`).classList.remove('flip');
+                        KEY_LOCK = false;
+                    }, 500);
+                }else{
+                    setSnackbar(`<p>No action available.</p>`);
+                }
+            }
+            
         }
-        renderToolbar();
-    }
-
-    if(key === 'x' && !KEY_LOCK && !SHOW_FISHING){
-        //move toolbar selection right
-        if(SELECTED >= 4){
+    
+        if(key === '1' && !KEY_LOCK && !SHOW_FISHING){
+            console.log('1 pressed')
             SELECTED = 0;
-        }else{
-            SELECTED += 1;
+            renderToolbar();
         }
-        renderToolbar();
-    }
-
-    //movement arrow keys
-    if(key === 'arrowdown' && !KEY_LOCK && !SHOW_FISHING){
-        e.preventDefault();
-        if(HERO.getDirection() === 'down'){
-            if(HERO.checkSpace('down')){
-                HERO.walk('down');
+    
+        if(key === '2' && !KEY_LOCK && !SHOW_FISHING){
+            SELECTED = 1;
+            renderToolbar();
+        }
+    
+        if(key === '3' && !KEY_LOCK && !SHOW_FISHING){
+            SELECTED = 2;
+            renderToolbar();
+        }
+    
+        if(key === '4' && !KEY_LOCK && !SHOW_FISHING){
+            SELECTED = 3;
+            renderToolbar();
+        }
+    
+        if(key === '5' && !KEY_LOCK && !SHOW_FISHING){
+            SELECTED = 4;
+            renderToolbar();
+        }
+    
+        if(key === 'z' && !KEY_LOCK && !SHOW_FISHING){
+            //move toolbar selection left
+            if(SELECTED <= 0){
+                SELECTED = 4;
             }else{
-                //space below not avail
+                SELECTED -= 1;
             }
-        }else{
-            HERO.setDirection('down');
+            renderToolbar();
         }
-    }
-
-    if(key === 'arrowup' && !KEY_LOCK && !SHOW_FISHING){
-        e.preventDefault();
-        if(HERO.getDirection() === 'up'){
-            if(HERO.checkSpace('up')){
-                HERO.walk('up');
+    
+        if(key === 'x' && !KEY_LOCK && !SHOW_FISHING){
+            //move toolbar selection right
+            if(SELECTED >= 4){
+                SELECTED = 0;
             }else{
-                //space below not avail
+                SELECTED += 1;
             }
-        }else{
-            HERO.setDirection('up');
+            renderToolbar();
         }
-    }
-
-    if(key === 'arrowleft' && !KEY_LOCK && !SHOW_FISHING){
-        e.preventDefault();
-        if(HERO.getDirection() === 'left'){
-            if(HERO.checkSpace('left')){
-                HERO.walk('left');
+    
+        //movement arrow keys
+        if(key === 'arrowdown' && !KEY_LOCK && !SHOW_FISHING){
+            try{
+                e.preventDefault();
+            }catch(e){
+                console.log('prevent default failed');
+            }
+    
+            if(HERO.getDirection() === 'down'){
+                if(HERO.checkSpace('down')){
+                    HERO.walk('down');
+                }else{
+                    //space below not avail
+                }
             }else{
-                //space below not avail
+                HERO.setDirection('down');
             }
-        }else{
-            HERO.setDirection('left');
         }
-    }
-
-    if(key === 'arrowright' && !KEY_LOCK && !SHOW_FISHING){
-        e.preventDefault();
-        if(HERO.getDirection() === 'right'){
-            if(HERO.checkSpace('right')){
-                HERO.walk('right');
+    
+        if(key === 'arrowup' && !KEY_LOCK && !SHOW_FISHING){
+            try{
+                e.preventDefault();
+            }catch(e){
+                console.log('prevent default failed');
+            }
+    
+            if(HERO.getDirection() === 'up'){
+                if(HERO.checkSpace('up')){
+                    HERO.walk('up');
+                }else{
+                    //space below not avail
+                }
             }else{
-                //space below not avail
+                HERO.setDirection('up');
             }
-        }else{
-            HERO.setDirection('right');
         }
+    
+        if(key === 'arrowleft' && !KEY_LOCK && !SHOW_FISHING){
+            try{
+                e.preventDefault();
+            }catch(e){
+                console.log('prevent default failed');
+            }
+            if(HERO.getDirection() === 'left'){
+                if(HERO.checkSpace('left')){
+                    HERO.walk('left');
+                }else{
+                    //space below not avail
+                }
+            }else{
+                HERO.setDirection('left');
+            }
+        }
+    
+        if(key === 'arrowright' && !KEY_LOCK && !SHOW_FISHING){
+            try{
+                e.preventDefault();
+            }catch(e){
+                console.log('prevent default failed');
+            }
+            if(HERO.getDirection() === 'right'){
+                if(HERO.checkSpace('right')){
+                    HERO.walk('right');
+                }else{
+                    //space below not avail
+                }
+            }else{
+                HERO.setDirection('right');
+            }
+        }
+    
+        renderMap(HERO.location);
     }
 
-    renderMap(HERO.location);
+    
 }
 
 document.onkeydown = keyPress;
+
+
+

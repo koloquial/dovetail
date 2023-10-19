@@ -58,6 +58,8 @@ function loadGame(transfer){
                 changeScreen(game);
             }
 
+            checkGamepad();
+
         }else{
             //game file not found
             setSnackbar(`<p>Saved game not found.</p>`);
