@@ -30,6 +30,10 @@ body{
   margin: 0px;
 }
 
+* {
+  touch-action: manipulation;
+}
+
 .container{
   margin: 0px;
   width: 100vw;
