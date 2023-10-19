@@ -25,7 +25,6 @@ function handleSounds(key){
 
 function setCheckmarks(){
     if(HERO){
-        console.log('HERO', HERO.sounds)
         for(let key in HERO.sounds){
             document.getElementById(`${key}-box`).checked = HERO.sounds[key];
         }
@@ -36,14 +35,18 @@ function settings(){
 
     if(HERO){
         return `
-            <div style="background-color: #000000; margin: 0; padding: 5px 25px 5px 25px; border-bottom: 1px solid black;">
+            <div class='modal-heading'>
                 <table style="width: 100%">
                     <tbody>
                         <tr>
-                            <td><h2>Settings</h2></td>
+                            <td>
+                                <h2>Settings</h2>
+                            </td>
                             <td>
                                 <div style="float: right">
-                                    <button onclick="handleClose()">Close</button>
+                                    <button onclick="handleClose()">
+                                        Close
+                                    </button>
                                 </div>
                             </td>
                         </tr>
@@ -51,17 +54,13 @@ function settings(){
                 </table>
             </div>
             <br />
-
-                <div class='menu-content'>
-                <table>
-                <tr>
-                <td style="vertical-align: top">
+            <div class='modal-body'>
                 <form>
-                <fieldset>
+                <fieldset class='fieldset-range'>
                     <legend>Gamepad</legend>
 
                     <div style="display: block">
-                        <fieldset>
+                        <fieldset class='fieldset-cell'>
                             <legend>Visible</legend>
                             <label class="switch">
                             <input 
@@ -75,8 +74,7 @@ function settings(){
                     </div>
                     </fieldset>
                     </form>
-                </td>
-                <td>
+               
                 <form>
                         <fieldset>
                             <legend>Sound</legend>
@@ -152,23 +150,25 @@ function settings(){
                             </div>
                         </fieldset>
                     </form>
-                </td>
-                </tr>
-                </table>
+                
                 </div>
             </div>
-            ${setTimeout(() => setCheckmarks(), 0)}
+            ${setTimeout(setCheckmarks, 0)}
         `
     }else{
         return `
-            <div style="background-color: #000000; margin: 0; padding: 5px 25px 5px 25px; border-bottom: 1px solid black;">
+            <div class='modal-heading'>
                 <table style="width: 100%">
                     <tbody>
                         <tr>
-                            <td><h2>Settings</h2></td>
+                            <td>
+                                <h2>Settings</h2>
+                            </td>
                             <td>
                                 <div style="float: right">
-                                    <button onclick="handleClose()">Close</button>
+                                    <button onclick="handleClose()">
+                                        Close
+                                    </button>
                                 </div>
                             </td>
                         </tr>
@@ -177,7 +177,7 @@ function settings(){
             </div>
             <br />
 
-            <div class='menu-content'>
+            <div class='modal-body'>
                 <p>
                     Start a new game or load game to access settings.
                 </p>

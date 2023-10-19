@@ -5,7 +5,7 @@ window.onclick = function(event) {
   }
 
 function handleNewGame(){
-    setModalContent(newGame);
+    changeScreen(newGame);
 }
 
 function handleDeleteGame(){

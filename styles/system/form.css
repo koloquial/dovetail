@@ -1,3 +1,13 @@
-legend, fieldset{
-    font-size: medium;
+legend{
+    font-size: large;
+    font-weight: 500;
+}
+
+fieldset{
+    border: 1px solid var(--heading);
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 5px;
+    background-color: var(--heading-fade);
 }

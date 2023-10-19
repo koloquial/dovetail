@@ -83,5 +83,3 @@ function generateMap(){
 
     return garden;
 }
-
-

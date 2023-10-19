@@ -1,5 +1,5 @@
 a:link{
-    color: yellow;
+    color: black;
 }
 
 a:hover{
@@ -7,9 +7,9 @@ a:hover{
 }
 
 a:active{
-    color: yellow;
+    color: black;
 }
 
 a:visited{
-    color: yellow;
+    color: black;
 }

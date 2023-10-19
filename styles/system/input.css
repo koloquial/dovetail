@@ -1,11 +1,12 @@
 input{
-    border-bottom: 1px solid rgb(154, 154, 154);
+    border-bottom: 1px solid var(--black);
     border-left: 0;
     border-right: 0;
     border-top: 0;
-    background-color: aliceblue;
-    padding: 5px;
+    background-color: var(--white);
+    padding: 10px;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
     cursor: default;
+    font-size: large;
 }

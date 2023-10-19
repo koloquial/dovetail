@@ -13,14 +13,18 @@ function handleAccordion(val){
 
 function wiki(){
     return `
-    <div style="background-color: #000000; margin: 0; padding: 5px 25px 5px 25px; border-bottom: 1px solid black;">
+    <div class='modal-heading'>
         <table style="width: 100%">
             <tbody>
                 <tr>
-                    <td><h2>Wiki</h2></td>
+                    <td>
+                        <h2>Wiki</h2>
+                    </td>
                     <td>
                         <div style="float: right">
-                            <button onclick="handleClose()">Close</button>
+                            <button onclick="handleClose()">
+                                Close
+                            </button>
                         </div>
                     </td>
                 </tr>
@@ -29,32 +33,25 @@ function wiki(){
     </div>
     <br />
 
-    <div class='menu-content'>
+    <div class='modal-body'>
 
-        <h3>Index</h3>
-        <table style="width: 100%">
-            <tr>
-                <td>
-                    <ul>
-                        <li>
-                            <p><a href="#controls">Controls</a></p>
-                            <ul><li>Computer, Mobile</li></ul>
-                        </li>
-                        <li>
-                            <p><a href="#hud">HUD</a></p>
-                            <ul><li>Toolbar, Health, Stamina, Map</li></ul>
-                        </li>
-                        <li>
-                            <p><a href="#menus">Menus</a></p>
-                            <ul><li>Inventory, Build</li></ul>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
+        <button id='wiki-controls' href='#controls'>
+            <span class="material-symbols-outlined">sports_esports</span>
+            <p>Controls</p>
+        </button>
 
+        <button id='wiki-hud'  onclick="location.href='#hud';">
+            <span class="material-symbols-outlined">monitor</span>
+            <p>HUD</p>
+        </button>
+        
+        <br /><br />
+        <br /><br />
         <br /><br />
         <hr />
+        <br /><br />
+        <br /><br />
+        <br /><br />
 
         <h3 id="controls">Controls</h3>
         
@@ -201,7 +198,7 @@ function wiki(){
     
         <div id='controls-mobile' class="panel">
             <p>
-                <b>Mobile controls are hidden by default</b>. To enable mobile controls click the <i>Settings</i> <span class="material-symbols-outlined">settings</span> icon then click the <i>Gamepad</i> slider. <b><u>Note:</u></b> this game was designed with desktop first in mind.
+                <b>Mobile controls are hidden by default</b>. To enable mobile controls click the <i>Settings</i> <span class="material-symbols-outlined">settings</span> icon then click the <i>Gamepad</i> slider.
             </p>
 
             <table style="width: 100%">
@@ -329,5 +326,6 @@ function wiki(){
         <div id='hud-stamina' class="panel">
             <p>Represented by a green meter.</p>
         </div>
+    </div>
     `
 }

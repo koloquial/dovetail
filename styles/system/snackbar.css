@@ -2,10 +2,11 @@
   visibility: hidden; 
   min-width: 250px;
   margin-left: -125px; 
-  background-color: #333; 
-  color: #fff; 
+  background-color: var(--message); 
+  color: var(--white); 
   text-align: center;
-  border-radius: 2px;
+  border-radius: 5px;
+  border: 3px double var(--button-alt);
   padding: 5px;
   position: fixed; 
   z-index: 1000000;

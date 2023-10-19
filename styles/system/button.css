@@ -1,9 +1,8 @@
 button{
-    background-color: #333333;
-    border: 1px solid black;
-    text-align: left;
+    background-color: var(--button);
+    border: 3px double var(--button-alt);
+    text-align: center;
     color: white;
-    border: 0;
     border-radius: 5px;
     padding: 5px 15px 5px 15px;
     margin: 5px;
@@ -15,7 +14,8 @@ button{
 }
 
 button:hover{
-    background-color: #777777;
+    background-color: var(--button-alt);
+    border: 3px double var(--button);
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 

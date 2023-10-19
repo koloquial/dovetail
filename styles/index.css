@@ -1,4 +1,6 @@
 @import url("./palette.css");
+@import url("./footer.css");
+@import url("./system/scrollbar.css");
 @import url("./hero/hero-down.css");
 
 /* system styles */
@@ -45,25 +47,15 @@ body{
   background-size: cover;
 }
 
-.footer{
-  display: inline-block; 
-  position: absolute; 
-  bottom: 20px; 
-  right: 50px;   
-}
-
-.footer-box{
-  display: inline-block; 
-  color: white; 
-  margin: 5px; 
-  cursor: pointer; 
-  font-size: small;
-}
-
 .page-container{
   display: inline-block;
   margin-top: 10%;
   width: 80%;
+}
+
+.screen{
+  background-color: var(--content);
+  height: 100%;
 }
 
 .white-block{
@@ -94,15 +86,6 @@ body{
   border: 1px solid black;
   overflow: hidden;
   padding: 0;
-}
-
-fieldset{
-  border: 1px solid rgb(154, 154, 154);
-  border-radius: 5px;
-}
-
-legend{
-    font-size: medium;
 }
 
 .grid-square{
@@ -339,9 +322,9 @@ legend{
 }
 
 .keyboard-icon{
-  background-color: #333333;
+  background-color: var(--button-alt);
   border: 0;
-  text-align: left;
+  text-align: center;
   color: white;
   border-radius: 5px;
   padding: 5px;
@@ -352,5 +335,8 @@ legend{
   font-weight: normal;
   font-size: medium;
   display: inline-block;
-  text-align: center;
+}
+
+hr{
+  border: 1px solid var(--heading);
 }
