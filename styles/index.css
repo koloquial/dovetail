@@ -11,6 +11,8 @@
 @import url("./system/form.css");
 @import url("./system/select.css");
 @import url("./system/gamepad.css");
+@import url("./system/accordion.css");
+@import url("./system/link.css");
 
 @import url("./loading.css");
 @import url("./animation.css");
@@ -332,3 +334,19 @@ legend{
   background-color: rgba(0, 45, 156, .5);
 }
 
+.keyboard-icon{
+  background-color: #333333;
+  border: 0;
+  text-align: left;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  height: 25px;
+  width: 25px;
+  margin-right: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  display: inline-block;
+  text-align: center;
+}

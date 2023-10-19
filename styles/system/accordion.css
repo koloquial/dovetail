@@ -1,0 +1,29 @@
+.accordion {
+    background-color: #333333;
+    border: 1px solid black;
+    text-align: left;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: medium;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  
+  .accordion:hover{
+    background-color: #777777;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #444444;
+    width: 93%;
+    position: relative;
+    left: 8px;
+  }

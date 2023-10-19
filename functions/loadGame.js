@@ -67,5 +67,6 @@ function loadGame(transfer){
     }catch(error){
         //error reading local storage
         setSnackbar(`<p>Error loading saved game.</p>`);
+        console.log(error)
     }
 }
