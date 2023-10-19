@@ -5,8 +5,6 @@ function renderStamina() {
   let value = current / max;
   value *= 100;
 
-  console.log('stamina', value)
-
   document.getElementById('stamina-bar').innerHTML = `
     <div 
       id='stamina-wedge' 

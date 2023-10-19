@@ -13,6 +13,9 @@ This game is a work-in-progress.
 - HTML
 - CSS
 - Javascript
-
 - Stable Diffusion 1.5: Splash screen, inventory icons
-- Google Fonts, material icons
+- Google Fonts, Material Symbols
+
+## Wiki
+
+For more information on mechanics visit the in-game wiki.

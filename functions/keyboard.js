@@ -8,15 +8,11 @@ function keyPress(e){
 
     if(HERO){
         let key = e.key.toLowerCase();
-
-        console.log('key press:', key)
     
         if(key === 'i' && !KEY_LOCK && !SHOW_FISHING){
             //open menu > inventory
             openMenu('inventory');
         }
-    
-    
     
         if(key === 'm' && !KEY_LOCK && !SHOW_FISHING){
             //reveal minimap
@@ -53,7 +49,6 @@ function keyPress(e){
         }
     
         if(key === '1' && !KEY_LOCK && !SHOW_FISHING){
-            console.log('1 pressed')
             SELECTED = 0;
             renderToolbar();
         }

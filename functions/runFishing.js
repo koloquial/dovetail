@@ -60,19 +60,19 @@ function runFishing(){
         document.getElementById('cast-bar').innerHTML = castHTML;
     }, 20);
 
-
-
     html += `
-    <div>
-        <button onclick="cast(${interval})">Cast</button>
-    </div>
-`
+        <table style='width: 100%'>
+            <tr>
+                <td>
+                    <button 
+                        style="width: 75px; height: 75px; border-radius: 50%;" onclick="cast(${interval})">Cast</button>
+                </td>
+                <td>
+                    <button onclick="closeFish(${interval})">Close</button>
+                </td>
+            </tr>
+        </table>
+    `
 
-    html += `
-    <div>
-        <button onclick="closeFish(${interval})">Close</button>
-    </div>
-`
     document.getElementById('fishing-game').innerHTML = html;
-
 }

@@ -29,7 +29,7 @@ function generateMap(){
     }
 
     //place lakes
-    let lakes = 3
+    let lakes = Math.floor(Math.random() * 7 + 3);
     let lakeSizeSeed = 10;
     let lakeSize, lakex, lakey;
 
@@ -43,17 +43,28 @@ function generateMap(){
                 lakex = Math.floor(Math.random() * mapSize);
                 lakey = Math.floor(Math.random() * mapSize);
     
-    
+                let test = true;
+
                 for(let k = 0; k < lakeSize; k++){
                     for(let l = 0; l < lakeSize; l++){
-                        garden[lakex + k][lakey + l] = 'w';
-                        garden[lakex + k][lakey + l] = 'w';
+                        if(!garden[lakex + k][lakey + l] || !garden[lakex + k][lakey + l]){
+                            test = false;
+                        }
                     }
                 }
-                
-                validLake = true;
-            }catch(e){
-                console.log('error setting lake.')
+
+                if(test){
+                    for(let k = 0; k < lakeSize; k++){
+                        for(let l = 0; l < lakeSize; l++){
+                            garden[lakex + k][lakey + l] = 'w';
+                            garden[lakex + k][lakey + l] = 'w';
+                        }
+                    }
+                    validLake = true;
+                }
+               
+            }catch(error){
+                // console.log('LAKE OUT OF BOUNDS:\n\n', error, '\n');
             }
         }
     }
@@ -69,8 +80,6 @@ function generateMap(){
             valid = true;
         }
     }
-
-    console.log('garden', garden)
 
     return garden;
 }

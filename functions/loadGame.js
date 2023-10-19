@@ -58,15 +58,13 @@ function loadGame(transfer){
                 changeScreen(game);
             }
 
-            checkGamepad();
-
         }else{
             //game file not found
             setSnackbar(`<p>Saved game not found.</p>`);
         }
     }catch(error){
         //error reading local storage
-        setSnackbar(`<p>Error loading saved game.</p>`);
-        console.log(error)
+        // setSnackbar(`<p>Error loading saved game.</p>`);
+        console.log('ERROR LOADING SAVED GAME', error)
     }
 }

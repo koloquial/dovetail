@@ -109,7 +109,7 @@ class Hero {
     try {
       localStorage.setItem("dovetail", JSON.stringify(this));
     } catch (error) {
-      console.log('error saving:', error);
+      console.log('ERROR SAVING,', error);
     }
   }
 
@@ -215,8 +215,8 @@ class Hero {
           }
         default: return false;
       }
-    } catch (e) {
-      console.log('error checking space', e)
+    } catch (error) {
+      console.log('ERROR CHECKING SPACE', error)
       return false;
     }
   }

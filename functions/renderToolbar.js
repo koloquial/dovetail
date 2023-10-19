@@ -57,7 +57,6 @@ function renderToolbar(){
                     html += `<div class='inv-qty'><p>${HERO.toolbar[i].qty}</p></div>`
                 }
             }
-
         }
     }catch(e){
         console.log('error rendering toolbar', e);

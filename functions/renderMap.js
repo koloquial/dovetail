@@ -116,6 +116,7 @@ function renderMap(location) {
     renderMiniMap();
     renderStamina();
     renderHealth();
+    checkGamepad();
   } catch (e) {
     setLoading(true, 10, () => {
       document.getElementById("game-window").innerHTML = html;
@@ -123,6 +124,7 @@ function renderMap(location) {
       renderToolbar();
       renderStamina();
       renderHealth();
+      checkGamepad();
       setLoading(false);
     });
   }
