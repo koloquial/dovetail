@@ -36,7 +36,12 @@
   position: absolute;
   bottom: 50px;
   width: 100vw;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+  background-color: var(--button);
+  border-top: 3px double var(--button-alt);
+  border-bottom: 3px double var(--button-alt);
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  cursor: default;
 }
 
 .loading-tip{
@@ -44,6 +49,8 @@
   padding-top: 20px;
   color: white;
   font-size: medium;
+  width: 50%;
+  vertical-align: top;
 }
 
 .lds-ripple-container{
