@@ -25,27 +25,36 @@ function deleteGame(){
     }
 
     return `
-        <div style="background-color: #000000; margin: 0; padding: 5px 25px 5px 25px; border-bottom: 1px solid black;">
+        <div class='modal-heading'>
             <table style="width: 100%">
                 <tbody>
                     <tr>
-                        <td><h2>Delete Game</h2></td>
+                        <td>
+                            <h2>Delete Game</h2>
+                        </td>
                         <td>
                             <div style="float: right">
-                                <button onclick="handleClose()">Close</button>
+                                <button onclick="handleClose()">
+                                    Back
+                                </button>
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <br />
 
-        <div class='menu-content'>
+        <div class='modal-body'>
             <p>
-                Are you sure you would like to delete this saved file from your browser cache?  This process cannot be undone.
+                Are you sure you would like to delete this saved file from your browser cache?  
             </p>
 
-            <p>${valid ? 'Name: ' + HERO.name : `Could not find a saved character.`}</p>
+            <p>
+                This process cannot be undone.
+            </p>
+
+            <p>${valid ? '<b>Name:</b> ' + HERO.name : `Could not find a saved character.`}</p>
 
             <br /><br />
             <center>

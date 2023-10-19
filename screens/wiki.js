@@ -13,45 +13,45 @@ function handleAccordion(val){
 
 function wiki(){
     return `
-    <div class='modal-heading'>
-        <table style="width: 100%">
-            <tbody>
-                <tr>
-                    <td>
-                        <h2>Wiki</h2>
-                    </td>
-                    <td>
-                        <div style="float: right">
-                            <button onclick="handleClose()">
-                                Close
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <br />
+        <div class='modal-heading'>
+            <table style="width: 100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <h2>Wiki</h2>
+                        </td>
+                        <td>
+                            <div style="float: right">
+                                <button onclick="handleClose()">
+                                    Close
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
 
-    <div class='modal-body'>
+        <div class='modal-body'>
 
-        <button id='wiki-controls' href='#controls'>
-            <span class="material-symbols-outlined">sports_esports</span>
-            <p>Controls</p>
-        </button>
+            <button id='wiki-controls' href='#controls'>
+                <span class="material-symbols-outlined">sports_esports</span>
+                <p>Controls</p>
+            </button>
 
-        <button id='wiki-hud'  onclick="location.href='#hud';">
-            <span class="material-symbols-outlined">monitor</span>
-            <p>HUD</p>
-        </button>
+            <button id='wiki-hud'  onclick="location.href='#hud';">
+                <span class="material-symbols-outlined">monitor</span>
+                <p>HUD</p>
+            </button>
         
-        <br /><br />
-        <br /><br />
-        <br /><br />
-        <hr />
-        <br /><br />
-        <br /><br />
-        <br /><br />
+            <br /><br />
+            <br /><br />
+            <br /><br />
+            <hr />
+            <br /><br />
+            <br /><br />
+            <br /><br />
 
         <h3 id="controls">Controls</h3>
         

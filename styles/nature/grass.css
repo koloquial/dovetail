@@ -1,11 +1,14 @@
 .grass-basic{
-    background-color: #198038;
+    background-color: var(--grass-light);
 }
 
 .grass{
     background:
-    radial-gradient(#198038 15%, transparent 36%) 1px 1px,
-    radial-gradient(#044317 15%, transparent 40%) 1px 1px;
-    background-color: #198038;
-    background-size: 15px 5px;
+    radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#707340 68% 70%,#0000 72%) 10px 10px/calc(2*10px) calc(2*10px),
+    radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#707340 68% 70%,#0000 72%) 10px 10px/calc(2*10px) calc(2*10px),
+    radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#707340 68% 70%,#0000 72%) 0 0/calc(2*10px) calc(2*10px),
+    radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#707340 68% 70%,#0000 72%) 0 0/calc(2*10px) calc(2*10px),
+    repeating-conic-gradient(#2d3426 0 25%,#0000 0 50%) 0 0/calc(2*10px) calc(2*10px),
+    radial-gradient(#0000 66%,#707340 68% 70%,#0000 72%) 0 calc(10px/2)/10px 10px
+    #2d3426;
 }
