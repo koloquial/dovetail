@@ -12,6 +12,8 @@
                     setLoading(false);
                 }
             };
+
+            
         </script>
 
         <!-- browser settings -->
@@ -92,30 +94,32 @@
                 <div id="loading-tip" class="loading-tip">
                     <p>Loading...</p>
                 </div>
-                
+            
                 <script>setLoadingTip();</script>
+            </div>
+        </div>
+
+        <div id="container">
+            <div id="screen">
+                <script>changeScreen(splash)</script>
+            </div>
+
+            <div id="footer" class="footer">
+                <div class="bottom-nav">
+                    <a onclick="setModalContent(wiki)">
+                        <span class="material-symbols-outlined" >developer_guide</span>
+                    </a>
+                    <a onclick="setModalContent(settings)">
+                        <span class="material-symbols-outlined">settings</span>
+                    </a>
+                </div>
             </div>
         </div>
 
         <div id="snackbar"></div>
 
-        <div id="container" class="container">
-            <script>changeScreen(splash)</script>
-        </div>
-
         <div id="modal" class="modal">
             <div id="modal-content" class="modal-content"></div>
-        </div>
-
-        <div id="footer" class="footer">
-            <div class="bottom-nav">
-                <a onclick="setModalContent(wiki)">
-                    <span class="material-symbols-outlined" >developer_guide</span>
-                </a>
-                <a onclick="setModalContent(settings)">
-                    <span class="material-symbols-outlined">settings</span>
-                </a>
-            </div>
         </div>
     </body>
 </html>

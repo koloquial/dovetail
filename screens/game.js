@@ -17,7 +17,8 @@ function game() {
   }
 
   return `
-    <center>
+  <div class='screen-back'>
+  <center>
         <div id='game-container'>
             <div id="game-window" class="game-window"></div>
             <div id="toolbar" class="toolbar"></div>

@@ -1,10 +1,10 @@
 .footer{
-    display: block;
+    display: inline-block;
     position: absolute;
-    bottom: 0px;
-    width: 100%;
+    bottom: 0;
     z-index: 100001;
-   
+    background-color: var(--button);
+    width: 100%;
 }
 
 .bottom-nav {

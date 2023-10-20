@@ -1,14 +1,9 @@
 select{
-    border-bottom: 1px solid var(--black);
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
     background-color: var(--white);
-    padding: 10px;
+    border-bottom: 1px solid var(--black);
+    padding: 5px;
     font-family: 'Roboto', sans-serif;
-    font-weight: normal;
     cursor: default;
-    font-size: large;
     min-width: 100px;
 }
 

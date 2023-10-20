@@ -30,32 +30,45 @@
 body{
   padding: 0px;
   margin: 0px;
+  height: 100%;
 }
 
 * {
   touch-action: manipulation;
 }
 
-.container{
-  margin: 0px;
-  width: 100vw;
-  height: 100vh;
-  padding: 0px;
+#container{
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
   background-image: url("../images/splash.png");
-  background-position: center; 
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 0;
+  margin: 0;
 }
 
-.page-container{
-  display: inline-block;
-  margin-top: 10%;
-  width: 80%;
+#screen{
+  min-height: 100%;
 }
 
-.screen{
+.screen-heading{
+  background-color: var(--heading);
+  color: white;
+  margin: 0;
+  padding: 0% 5% 0% 5%;
+}
+
+.screen-back{
   background-color: var(--content);
-  height: 100%;
+  min-height: 100vh;
+}
+
+.screen-body{
+  margin: 0;
+  padding: 0% 5% 0% 5%;
 }
 
 .white-block{

@@ -1,3 +1,3 @@
 function changeScreen(screen){
-    document.getElementById("container").innerHTML = screen();
+    document.getElementById("screen").innerHTML = screen();
 }

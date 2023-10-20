@@ -26,12 +26,10 @@ function handleDeleteGame(){
 function splash(){
     return `
         <center>
-            <div class="page-container">
-                <h1 class="title">Dovetail</h1>
-                <button onclick="handleNewGame()">New Game</button>
-                <button onclick="loadGame(true);">Load Game</button>
-                <button onclick="handleDeleteGame()">Delete Game</button>
-            </div>
+            <h1 class="title">Dovetail</h1>
+            <button onclick="handleNewGame()">New Game</button>
+            <button onclick="loadGame(true);">Load Game</button>
+            <button onclick="handleDeleteGame()">Delete Game</button>
         </center>
     `
 }
