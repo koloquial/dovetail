@@ -75,7 +75,7 @@ function handleSubmit(){
 
         setSnackbar(`<p>${newHero.name} has been created.</p>`);
 
-        changeScreen(game);
+        setModalContent(game);
     }else{
         setSnackbar(`<p>Please enter a valid name.</p>`);
     }
@@ -97,7 +97,7 @@ function newGame(){
                             </td>
                             <td>
                                 <div style="float: right">
-                                    <button onclick="changeScreen(splash)">
+                                    <button onclick="handleCancel()">
                                         Back
                                     </button>
                                 </div>
@@ -109,6 +109,7 @@ function newGame(){
             <br />
 
             <div class='screen-body'>
+            <button onclick="handleSubmit()">Start Game</button>
                 <center>
                     <div id="hero-preview" class="hero-preview">
                         <div id="head" class="head-down">
@@ -267,12 +268,6 @@ function newGame(){
                             </fieldset>
                         </form>
                     </div>
-
-                    <br /><br />
-                    
-                    <button onclick="handleSubmit()">Start Game</button>
-            
-                    <br />
                 </center>
             </div>
         </div>
