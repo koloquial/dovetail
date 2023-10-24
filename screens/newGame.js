@@ -88,7 +88,7 @@ function handleCancel(){
 function newGame(){
     return `
     <div class='screen-back'>
-            <div class='screen-heading'>
+        <div class='screen-heading'>
                 <table style="width: 100%">
                     <tbody>
                         <tr>
@@ -109,7 +109,6 @@ function newGame(){
             <br />
 
             <div class='screen-body'>
-            <button onclick="handleSubmit()">Start Game</button>
                 <center>
                     <div id="hero-preview" class="hero-preview">
                         <div id="head" class="head-down">
@@ -268,6 +267,11 @@ function newGame(){
                             </fieldset>
                         </form>
                     </div>
+                </center>
+
+                <br />
+                <center>
+                    <button onclick="handleSubmit()">Start Game</button>
                 </center>
             </div>
         </div>
