@@ -22,6 +22,7 @@
 .bottom-nav {
     overflow: hidden;
     background-color: var(--heading);
+    height: 100%;
 }
   
 .bottom-nav a {
@@ -34,6 +35,7 @@
     cursor: pointer;
     background-color: var(--button);
     border: 0;
+    height: 100%;
 }
 
 .bottom-nav a:hover {
