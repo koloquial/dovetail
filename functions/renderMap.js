@@ -136,18 +136,20 @@ function renderMap(location) {
   try {
     document.getElementById("game-window").innerHTML = html;
     renderToolbar();
+    checkGamepad();
     // renderMiniMap();
     // renderStamina();
     // renderHealth();
-    // checkGamepad();
+    
   } catch (e) {
     setLoading(true, 10, () => {
       document.getElementById("game-window").innerHTML = html;
       renderToolbar();
+      checkGamepad();
       // renderMiniMap();
       // renderStamina();
       // renderHealth();
-      // checkGamepad();
+      
       setLoading(false);
     });
   }
