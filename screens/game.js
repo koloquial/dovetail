@@ -93,7 +93,7 @@ function game() {
                 <div style="float: right">
                     <div id='gamepad-action' class='gamepad-block'>
                         <div id='gamepad-action' class='gamepad-action' onclick="keyPress({key: 'a'});">
-                            <div style="display: inline-block; position: relative; top: 45px; left: 35px;">
+                            <div style="display: inline-block; position: relative; top: 37px; left: 38px;">
                                 <span class="material-symbols-outlined">
                                     target
                                 </span>
