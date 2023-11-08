@@ -1,24 +1,39 @@
-//globals
+//global variables
 //holds tree objects: [key] tree-${i}-${j}
 const TREE_MEMORY = {};
 
 function renderMap(location) {
+  //get hero coordinates
   const heroCoordinates = HERO.getHeroCoordinates();
 
-  //render cells within a five tile radius around hero
-  let startRow = heroCoordinates[0] - 4;
-  let startCell = heroCoordinates[1] - 5;
-  let lengthRow = 10;
-  let lengthCol = 10;
+  //get device screen width/height
+  let SCREEN_WIDTH = window.screen.width;
+  let SCREEN_HEIGHT =  window.screen.height;
+
+  //calculate size of game window based on grid size
+  //mapWidth and mapHeight are equal to amount of tiles
+  let mapWidth = Math.floor(SCREEN_WIDTH / 70);
+  let mapHeight = Math.floor(SCREEN_HEIGHT / 70);
+
+  let renderRow = mapHeight - 1;
+  renderRow = Math.floor(renderRow / 2);
+
+  let renderCol = mapWidth - 1; 
+  renderCol = Math.floor(renderCol / 2);
+
+  let startRow = heroCoordinates[0] - renderRow;
+  let startCol = heroCoordinates[1] - renderCol;
 
   let html = `<table style="border-collapse: collapse;">`;
 
   for (let i = 0; i < location.length; i++) {
-    if (i >= startRow && i <= lengthRow + startRow) {
+
+    if (i >= startRow && i <= startRow + renderRow) {
       html += `<tr>`;
 
       for (let j = 0; j < location[i].length; j++) {
-        if (j >= startCell && j <= lengthCol + startCell) {
+        if (j >= startCol && j <= startCol + renderCol) {
+
           html += `<td id='cell-${i}-${j}' class='grid-square`;
 
           if (location[i][j].includes('g')) {
@@ -113,18 +128,18 @@ function renderMap(location) {
 
   try {
     document.getElementById("game-window").innerHTML = html;
-    renderMiniMap();
-    renderStamina();
-    renderHealth();
-    checkGamepad();
+    // renderMiniMap();
+    // renderStamina();
+    // renderHealth();
+    // checkGamepad();
   } catch (e) {
     setLoading(true, 10, () => {
       document.getElementById("game-window").innerHTML = html;
-      renderMiniMap();
-      renderToolbar();
-      renderStamina();
-      renderHealth();
-      checkGamepad();
+      // renderMiniMap();
+      // renderToolbar();
+      // renderStamina();
+      // renderHealth();
+      // checkGamepad();
       setLoading(false);
     });
   }

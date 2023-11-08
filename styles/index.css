@@ -61,12 +61,6 @@ body{
   padding: 0% 5% 0% 5%;
 }
 
-.screen-back{
-  background-color: var(--content);
-  min-height: 100vh;
-  overflow: scroll;
-}
-
 .screen-body{
   margin: 0;
   padding: 0% 5% 0% 5%;
@@ -86,20 +80,17 @@ body{
 
 #game-container{
   display: block;
-  width: 770px;
-  height: 770px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  text-align: center;
+  background-color: limegreen;
 }
 
-.game-window{
-  display: inline-block;
-  margin-top: 5%;
-  width: 770px;
-  height: 770px;
-  background-color: white;
-  border: 1px solid black;
-  overflow: hidden;
-  padding: 0;
+#game-window{
+  text-align: left;
+  background-color: lightcoral;
 }
 
 .grid-square{
@@ -110,6 +101,7 @@ body{
   border: 0;
   padding: 0;
   margin: 0;
+  border: 1px solid white;
 }
 
 .toolbar{
