@@ -31,7 +31,7 @@ function renderInventory() {
                 html += `
                           <div 
                               id='inventory-icon-${i}'
-                              class='toolbar-icon ${HERO.inventory[i].style}'
+                              class='toolbar-icon-large ${HERO.inventory[i].style}'
                               onclick='addToToolbar(${i})'
                           >
                           </div>
