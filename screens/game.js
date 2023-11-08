@@ -101,7 +101,29 @@ function game() {
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div id='gamepad-menu-icons' class='gamepad-menu-icons'>
+
+                <div id='gamepad-map' class='gamepad-arrow' onclick="keyPress({key: 'm'})";>
+                    <span class="material-symbols-outlined">
+                        map
+                    </span>
+                </div>
+
+                <br />
+                <div id='gamepad-inventory' class='gamepad-arrow' onclick="keyPress({key: 'i'});">
+                    <span class="material-symbols-outlined">
+                        backpack
+                    </span>
+                </div>
+
+                <br />
+                <div id='gamepad-build' class='gamepad-arrow' onclick="keyPress({key: 'b'});">
+                    <span class="material-symbols-outlined">
+                        construction
+                    </span>
+                </div>
             </div>
         </div>
         <script>
