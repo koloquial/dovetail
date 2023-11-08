@@ -1,4 +1,4 @@
-//globals
+//global variables
 let KEY_LOCK = false;
 let SELECTED = 0;
 let MINIMAP = false;

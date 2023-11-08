@@ -2,6 +2,7 @@ let SHOW_MENU = false;
 let ACTIVE_MENU = '';
 
 function openMenu(subsection){
+    console.log('menu called')
     if(SHOW_MENU){
         document.getElementById("menu").style.visibility = 'hidden';
         SHOW_MENU = false;

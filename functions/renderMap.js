@@ -31,7 +31,7 @@ function renderMap(location) {
 
   let endCol = heroCoordinates[1] + colPadding;
 
-  let html = `<table style="border-collapse: collapse; width:100%; table-layout:fixed; word-break: break-word;">`;
+  let html = `<table style="border-collapse: collapse;">`;
 
   for (let i = 0; i < location.length; i++) {
 
@@ -135,6 +135,7 @@ function renderMap(location) {
 
   try {
     document.getElementById("game-window").innerHTML = html;
+    renderToolbar();
     // renderMiniMap();
     // renderStamina();
     // renderHealth();
@@ -142,8 +143,8 @@ function renderMap(location) {
   } catch (e) {
     setLoading(true, 10, () => {
       document.getElementById("game-window").innerHTML = html;
+      renderToolbar();
       // renderMiniMap();
-      // renderToolbar();
       // renderStamina();
       // renderHealth();
       // checkGamepad();
