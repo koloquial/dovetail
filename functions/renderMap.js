@@ -7,32 +7,39 @@ function renderMap(location) {
   const heroCoordinates = HERO.getHeroCoordinates();
 
   //get device screen width/height
-  let SCREEN_WIDTH = window.screen.width;
-  let SCREEN_HEIGHT =  window.screen.height;
+  const SCREEN_WIDTH = window.screen.width;
+  const SCREEN_HEIGHT =  window.screen.height;
+
+  //square size in pixels
+  const SQUARE_SIZE = 70;
 
   //calculate size of game window based on grid size
-  //mapWidth and mapHeight are equal to amount of tiles
-  let mapWidth = Math.floor(SCREEN_WIDTH / 70);
-  let mapHeight = Math.floor(SCREEN_HEIGHT / 70);
+  let mapWidthInTiles = Math.floor(SCREEN_WIDTH / SQUARE_SIZE);
+  let mapHeightInTiles = Math.floor(SCREEN_HEIGHT / SQUARE_SIZE);
 
-  let renderRow = mapHeight - 1;
-  renderRow = Math.floor(renderRow / 2);
+  //calculate the padding between the character and edge of map
+  let rowPadding = mapHeightInTiles - 1;
+  rowPadding = Math.floor(rowPadding / 2);
 
-  let renderCol = mapWidth - 1; 
-  renderCol = Math.floor(renderCol / 2);
+  let colPadding = mapWidthInTiles - 1; 
+  colPadding = Math.floor(colPadding / 2);
 
-  let startRow = heroCoordinates[0] - renderRow;
-  let startCol = heroCoordinates[1] - renderCol;
+  let startRow = heroCoordinates[0] - rowPadding;
+  let startCol = heroCoordinates[1] - colPadding;
+
+  let endRow = heroCoordinates[0] + rowPadding;
+
+  let endCol = heroCoordinates[1] + colPadding;
 
   let html = `<table style="border-collapse: collapse;">`;
 
   for (let i = 0; i < location.length; i++) {
 
-    if (i >= startRow && i <= startRow + renderRow) {
+    if (i >= startRow && i <= endRow) {
       html += `<tr>`;
 
       for (let j = 0; j < location[i].length; j++) {
-        if (j >= startCol && j <= startCol + renderCol) {
+        if (j >= startCol && j <= endCol) {
 
           html += `<td id='cell-${i}-${j}' class='grid-square`;
 
