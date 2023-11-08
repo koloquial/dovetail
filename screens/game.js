@@ -17,9 +17,7 @@ function game() {
 
     return `
         <div id="game-container">
-            <center>
-                <div id="game-window"></div>
-            </center>
+            <div id="game-window"></div>
         </div>
 
         <script>
