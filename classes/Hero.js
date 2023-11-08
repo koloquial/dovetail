@@ -20,7 +20,7 @@ class Hero {
       music: false,
       bgsfx: false,
       sfx: true,
-      gamepad: false
+      gamepad: true
     }) {
     this.name = name;
     this.location = location;

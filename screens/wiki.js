@@ -45,13 +45,7 @@ function wiki(){
                 <p>HUD</p>
             </button>
         
-            <br /><br />
-            <br /><br />
-            <br /><br />
             <hr />
-            <br /><br />
-            <br /><br />
-            <br /><br />
 
         <h3 id="controls">Controls</h3>
         
@@ -197,10 +191,6 @@ function wiki(){
         </div>
     
         <div id='controls-mobile' class="panel">
-            <p>
-                <b>Mobile controls are hidden by default</b>. To enable mobile controls click the <i>Settings</i> <span class="material-symbols-outlined">settings</span> icon then click the <i>Gamepad</i> slider.
-            </p>
-
             <table style="width: 100%">
             <tr>
                 <td style="vertical-align: top;">
