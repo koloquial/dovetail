@@ -21,7 +21,10 @@
                 } else {
                     document.documentElement.requestFullscreen();
                 }
-            }  
+            }
+
+            window.onresize = renderMap(HERO.location);
+            
         </script>
 
         <!-- browser settings -->
