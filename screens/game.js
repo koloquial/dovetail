@@ -111,14 +111,14 @@ function game() {
                     </span>
                 </div>
 
-                <br />
+                <br /><br />
                 <div id='gamepad-inventory' class='gamepad-arrow' onclick="keyPress({key: 'i'});">
                     <span class="material-symbols-outlined">
                         backpack
                     </span>
                 </div>
 
-                <br />
+                <br /><br />
                 <div id='gamepad-build' class='gamepad-arrow' onclick="keyPress({key: 'b'});">
                     <span class="material-symbols-outlined">
                         construction

@@ -14,15 +14,15 @@ function renderMap(location) {
   const SQUARE_SIZE = 70;
 
   //calculate size of game window based on grid size
-  let mapWidthInTiles = SCREEN_WIDTH / SQUARE_SIZE;
-  let mapHeightInTiles = SCREEN_HEIGHT / SQUARE_SIZE;
+  let mapWidthInTiles = Math.floor(SCREEN_WIDTH / SQUARE_SIZE);
+  let mapHeightInTiles = Math.floor(SCREEN_HEIGHT / SQUARE_SIZE);
 
   //calculate the padding between the character and edge of map
   let rowPadding = mapHeightInTiles - 1;
-  rowPadding = Math.ceil(rowPadding / 2);
+  rowPadding = Math.floor(rowPadding / 2);
 
   let colPadding = mapWidthInTiles - 1; 
-  colPadding = Math.ceil(colPadding / 2);
+  colPadding = Math.floor(colPadding / 2);
 
   let startRow = heroCoordinates[0] - rowPadding;
   let startCol = heroCoordinates[1] - colPadding;
