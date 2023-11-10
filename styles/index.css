@@ -127,6 +127,7 @@ body{
   margin: 5px;
   cursor: pointer;
   background-color:rgba(0, 0, 0, 0.16);
+  rotate: 90deg;
 }
 
 .toolbar-icon-large{
@@ -151,8 +152,7 @@ body{
   background-color:rgba(0, 0, 0, 0.16);
   position: relative;
   top: 10px;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+  rotate: 90deg;
 }
 
 .flip{
@@ -218,11 +218,11 @@ body{
 .minimap{
   visibility: hidden;
   display: inline-block;
-  position: relative;
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.23);
   border: 1px solid black;
-  top: -1580px;
-  left: -450px;
+  top: 3px;
+  left: 70px;
   width: 250px;
   height: 250px;
   border-radius: 5px;
@@ -241,11 +241,11 @@ body{
 
 .stamina-bar{
   display: inline-block;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.23);
+  position: absolute;
+  background-color: black;
   border: 1px solid black;
-  top: -1220px;
-  left: 360px;
+  right: -13px;
+  top: 230px;
   width: 100px;
   height: 25px;
   border-radius: 5px;
@@ -259,16 +259,16 @@ body{
   position: relative;
   height: 25px;
   border-radius: 5px;
-  background: linear-gradient(to bottom, rgba(0, 128, 0, .5), rgba(0, 128, 0, .3))
+  background: rgba(0, 128, 0, 1);
 }
 
 .health-bar{
   display: inline-block;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.23);
+  position: absolute;
+  background-color: black;
   border: 1px solid black;
-  top: -1219px;
-  left: 295px;
+  top: 345px;
+  right: -13px;
   width: 100px;
   height: 25px;
   border-radius: 5px;
@@ -282,19 +282,20 @@ body{
   position: relative;
   height: 25px;
   border-radius: 5px;
+  background: rgba(255, 0, 0, 1);
 }
 
 .fishing-window{
   display: inline-block; 
-  position: relative;
-  top: -1885px;
-  left: 0px;
+  position: absolute;
+  top: 0px;
+  left: 30%;
   visibility: hidden;
   width: 768px;
   height: 730px;
   /* background-color: rgba(51, 51, 51, .7); */
   z-index: 10000;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   text-align: left;
   color: white;
 }

@@ -18,7 +18,6 @@ function game() {
     return `
         <div id="game-container">
             <div id="game-window"></div>
-
             <div id="toolbar"></div>
 
             <div id="menu" class="menu">
@@ -91,6 +90,7 @@ function game() {
                 </div>
 
                 <div style="float: right">
+                <br /><br />
                     <div id='gamepad-action' class='gamepad-block'>
                         <div id='gamepad-action' class='gamepad-action' onclick="keyPress({key: 'a'});">
                             <div style="display: inline-block; position: relative; top: 37px; left: 38px;">
@@ -104,7 +104,6 @@ function game() {
             </div>
 
             <div id='gamepad-menu-icons' class='gamepad-menu-icons'>
-
                 <div id='gamepad-map' class='gamepad-arrow' onclick="keyPress({key: 'm'})";>
                     <span class="material-symbols-outlined">
                         map
@@ -124,6 +123,13 @@ function game() {
                         construction
                     </span>
                 </div>
+            </div>
+
+            <div id="minimap" class="minimap"></div>
+            <div id="stamina-bar" class="stamina-bar"></div>
+            <div id="health-bar" class="health-bar"></div>
+            <div id="fishing-window" class="fishing-window">
+                <div id="fishing-game" class="fishing-game"></div>
             </div>
         </div>
         <script>

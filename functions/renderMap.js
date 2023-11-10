@@ -19,16 +19,15 @@ function renderMap(location) {
 
   //calculate the padding between the character and edge of map
   let rowPadding = mapHeightInTiles - 1;
-  rowPadding = rowPadding / 2;
+  rowPadding = Math.ceil(rowPadding / 2);
 
   let colPadding = mapWidthInTiles - 1; 
-  colPadding = colPadding / 2;
+  colPadding = Math.ceil(colPadding / 2);
 
   let startRow = heroCoordinates[0] - rowPadding;
   let startCol = heroCoordinates[1] - colPadding;
 
   let endRow = heroCoordinates[0] + rowPadding;
-
   let endCol = heroCoordinates[1] + colPadding;
 
   let html = `<table style="border-collapse: collapse;">`;
@@ -137,19 +136,17 @@ function renderMap(location) {
     document.getElementById("game-window").innerHTML = html;
     renderToolbar();
     checkGamepad();
-    // renderMiniMap();
-    // renderStamina();
-    // renderHealth();
-    
+    renderMiniMap();
+    renderStamina();
+    renderHealth();
   } catch (e) {
     setLoading(true, 10, () => {
       document.getElementById("game-window").innerHTML = html;
       renderToolbar();
       checkGamepad();
-      // renderMiniMap();
-      // renderStamina();
-      // renderHealth();
-      
+      renderMiniMap();
+      renderStamina();
+      renderHealth();
       setLoading(false);
     });
   }

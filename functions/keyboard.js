@@ -7,15 +7,16 @@ function keyPress(e){
     // e = e || window.event;
 
     if(HERO){
+        //force key to be lowercase
         let key = e.key.toLowerCase();
-    
+
+        //open menu > inventory
         if(key === 'i' && !KEY_LOCK && !SHOW_FISHING){
-            //open menu > inventory
             openMenu('inventory');
         }
     
+        //reveal minimap
         if(key === 'm' && !KEY_LOCK && !SHOW_FISHING){
-            //reveal minimap
            if(!MINIMAP){
                 document.getElementById('minimap').style.visibility = 'visible';
                 MINIMAP = true;
@@ -98,7 +99,7 @@ function keyPress(e){
             try{
                 e.preventDefault();
             }catch(e){
-                console.log('prevent default failed');
+                // console.log('prevent default failed');
             }
     
             if(HERO.getDirection() === 'down'){
@@ -116,7 +117,7 @@ function keyPress(e){
             try{
                 e.preventDefault();
             }catch(e){
-                console.log('prevent default failed');
+                // console.log('prevent default failed');
             }
     
             if(HERO.getDirection() === 'up'){
@@ -134,7 +135,7 @@ function keyPress(e){
             try{
                 e.preventDefault();
             }catch(e){
-                console.log('prevent default failed');
+                // console.log('prevent default failed');
             }
             if(HERO.getDirection() === 'left'){
                 if(HERO.checkSpace('left')){
@@ -151,7 +152,7 @@ function keyPress(e){
             try{
                 e.preventDefault();
             }catch(e){
-                console.log('prevent default failed');
+                // console.log('prevent default failed');
             }
             if(HERO.getDirection() === 'right'){
                 if(HERO.checkSpace('right')){

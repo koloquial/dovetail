@@ -23,8 +23,11 @@
                 }
             }
 
-            window.onresize = renderMap(HERO.location);
-            
+            try{
+                window.onresize = renderMap(HERO.location);
+            }catch(error){
+                // console.log('resize failed.')
+            }
         </script>
 
         <!-- browser settings -->
@@ -118,7 +121,7 @@
             <div id="footer" class="footer">
                 <div class="bottom-nav">
                     <a onclick="setModalContent(wiki)">
-                        <span class="material-symbols-outlined" >developer_guide</span>
+                        <span class="material-symbols-outlined">developer_guide</span>
                     </a>
                     <a onclick="setModalContent(settings)">
                         <span class="material-symbols-outlined">settings</span>
